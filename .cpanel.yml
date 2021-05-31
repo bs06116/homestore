@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/example/public_html/homestorepro.pk
+    - export DEPLOYPATH=/home/clickand/homestorepro.pk
     - /bin/cp -a * $DEPLOYPATH
