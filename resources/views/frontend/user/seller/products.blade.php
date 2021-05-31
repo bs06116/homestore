@@ -78,8 +78,7 @@
                         <th data-breakpoints="md">{{ translate('Category')}}</th>
                         <th data-breakpoints="md">{{ translate('Current Qty')}}</th>
                         <th>{{ translate('Base Price')}}</th>
-                        <th data-breakpoints="md">{{ translate('Published')}}</th>
-                        <th data-breakpoints="md">{{ translate('Featured')}}</th>
+                        {{-- <th data-breakpoints="md">{{ translate('Featured')}}</th> --}}
                         <th data-breakpoints="md" class="text-right">{{ translate('Options')}}</th>
                     </tr>
                 </thead>
@@ -108,12 +107,12 @@
                                 @endphp
                             </td>
                             <td>{{ $product->unit_price }}</td>
-                            <td>
+                            {{-- <td>
                                 <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input onchange="update_published(this)" value="{{ $product->id }}" type="checkbox" <?php if($product->published == 1) echo "checked";?> >
+                                    <input onchange="update_published(this)" value="{{ $product->id }}" type="checkbox"  //if($product->published == 1) echo "checked";?> >
                                     <span class="slider round"></span>
                                 </label>
-                            </td>
+                            </td> --}}
                             <td>
                                 <label class="aiz-switch aiz-switch-success mb-0">
                                     <input onchange="update_featured(this)" value="{{ $product->id }}" type="checkbox" <?php if($product->seller_featured == 1) echo "checked";?> >
