@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-<section class="pt-5 mb-4">
+<section class="pt-3 mb-3">
     <div class="container">
         <div class="row">
             <div class="col-xl-8 mx-auto">
@@ -48,7 +48,7 @@
                 <form action="{{ route('payment.checkout') }}" class="form-default" role="form" method="POST" id="checkout-form">
                     @csrf
                     <input type="hidden" name="owner_id" value="{{ $carts[0]['owner_id'] }}">
-                    
+
                     <div class="card shadow-sm border-0 rounded">
                         <div class="card-header p-3">
                             <h3 class="fs-16 fw-600 mb-0">
@@ -429,10 +429,10 @@
                 $('#manual_payment_description').html($('#manual_payment_info_'+id).html());
             }
         }
-        
+
         $(document).on("click", "#coupon-apply",function() {
             var data = new FormData($('#apply-coupon-form')[0]);
-            
+
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -450,10 +450,10 @@
                 }
             })
         });
-        
+
         $(document).on("click", "#coupon-remove",function() {
             var data = new FormData($('#remove-coupon-form')[0]);
-            
+
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

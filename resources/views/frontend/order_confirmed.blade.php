@@ -4,7 +4,7 @@
     @php
         $status = $order->orderDetails->first()->delivery_status;
     @endphp
-    <section class="pt-5 mb-4">
+    <section class="pt-3 mb-3">
         <div class="container">
             <div class="row">
                 <div class="col-xl-8 mx-auto">

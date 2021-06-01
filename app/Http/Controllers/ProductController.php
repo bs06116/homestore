@@ -190,6 +190,13 @@ class ProductController extends Controller
         $product->video_provider = $request->video_provider;
         $product->video_link = $request->video_link;
         $product->unit_price = $request->unit_price;
+        $product->range_1 = $request->range_1;
+        $product->range_1_price = $request->range_1_price;
+        $product->range_2 = $request->range_2;
+        $product->range_2_price = $request->range_2_price;
+        $product->range_3 = $request->range_3;
+        $product->range_3_price = $request->range_3_price;
+
 //        $product->purchase_price = $request->purchase_price;
 //        $product->tax = $request->tax;
 //        $product->tax_type = $request->tax_type;
@@ -212,7 +219,7 @@ class ProductController extends Controller
         if ($request->has('is_quantity_multiplied')) {
             $product->is_quantity_multiplied = 1;
         }
-        
+
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
 
@@ -507,6 +514,13 @@ class ProductController extends Controller
         $product->video_provider = $request->video_provider;
         $product->video_link     = $request->video_link;
         $product->unit_price     = $request->unit_price;
+        $product->range_1 = $request->range_1;
+        $product->range_1_price = $request->range_1_price;
+        $product->range_2 = $request->range_2;
+        $product->range_2_price = $request->range_2_price;
+        $product->range_3 = $request->range_3;
+        $product->range_3_price = $request->range_3_price;
+
 //        $product->purchase_price = $request->purchase_price;
 //        $product->tax            = $request->tax;
 //        $product->tax_type       = $request->tax_type;
@@ -524,18 +538,18 @@ class ProductController extends Controller
                 $product->shipping_cost = json_encode($request->shipping_cost);
             }
         }
-        
+
         if ($request->has('is_quantity_multiplied')) {
             $product->is_quantity_multiplied = 1;
         }
         if ($request->has('cash_on_delivery')) {
             $product->cash_on_delivery = 1;
         }
-        
+
         if ($request->has('featured')) {
             $product->featured = 1;
         }
-        
+
         if ($request->has('todays_deal')) {
             $product->todays_deal = 1;
         }
@@ -719,11 +733,11 @@ class ProductController extends Controller
         foreach ($product->product_translations as $key => $product_translations) {
             $product_translations->delete();
         }
-        
+
         foreach ($product->stocks as $key => $stock) {
             $stock->delete();
         }
-        
+
         if(Product::destroy($id)){
 
             flash(translate('Product has been deleted successfully'))->success();
@@ -755,7 +769,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product_new = $product->replicate();
         $product_new->slug = substr($product_new->slug, 0, -5).Str::random(5);
-        
+
         if($product_new->save()){
             foreach ($product->stocks as $key => $stock) {
                 $product_stock              = new ProductStock;
@@ -765,9 +779,9 @@ class ProductController extends Controller
                 $product_stock->sku         = $stock->sku;
                 $product_stock->qty         = $stock->qty;
                 $product_stock->save();
-                
+
             }
-            
+
             flash(translate('Product has been duplicated successfully'))->success();
             if(Auth::user()->user_type == 'admin' || Auth::user()->user_type == 'staff'){
               if($request->type == 'In House')

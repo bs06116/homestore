@@ -220,11 +220,24 @@
         <a href="{{ route('home') }}" class="text-reset flex-grow-1 text-center py-3 border-right {{ areActiveRoutes(['home'],'bg-soft-primary')}}">
             <i class="las la-home la-2x"></i>
         </a>
-        <a href="{{ route('categories.all') }}" class="text-reset flex-grow-1 text-center py-3 border-right {{ areActiveRoutes(['categories.all'],'bg-soft-primary')}}">
+
+            <a href="{{ route('wishlists.index') }}" class="text-reset flex-grow-1 text-center py-3 border-right">
+                <span class="d-inline-block position-relative px-2">
+                    <i class="la la-heart-o la-2x opacity-80"></i>
+                    @if(Auth::check())
+                        <span class="badge badge-circle badge-primary position-absolute absolute-top-right">{{ count(Auth::user()->wishlists)}}</span>
+                    @else
+                        <span class="badge badge-circle badge-primary position-absolute absolute-top-right">0</span>
+                    @endif
+
+                </span>
+            </a>
+
+        {{-- <a href="{{ route('categories.all') }}" class="text-reset flex-grow-1 text-center py-3 border-right {{ areActiveRoutes(['categories.all'],'bg-soft-primary')}}">
             <span class="d-inline-block position-relative px-2">
                 <i class="las la-list-ul la-2x"></i>
             </span>
-        </a>
+        </a> --}}
         <a href="{{ route('cart') }}" class="text-reset flex-grow-1 text-center py-3 border-right {{ areActiveRoutes(['cart'],'bg-soft-primary')}}">
             <span class="d-inline-block position-relative px-2">
                 <i class="las la-shopping-cart la-2x"></i>

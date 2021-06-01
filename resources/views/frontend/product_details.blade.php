@@ -301,7 +301,7 @@
                                                 <button class="btn col-auto btn-icon btn-sm btn-circle btn-light" type="button" data-type="minus" data-field="quantity" disabled="">
                                                     <i class="las la-minus"></i>
                                                 </button>
-                                                <input type="text" name="quantity" class="col border-0 text-center flex-grow-1 fs-16 input-number" placeholder="1" value="{{ $detailedProduct->min_qty }}" min="{{ $detailedProduct->min_qty }}" max="10" readonly>
+                                                <input type="text" name="quantity" class="col border-0 text-center flex-grow-1 fs-16 input-number" placeholder="1" value="{{ $detailedProduct->min_qty }}" min="{{ $detailedProduct->min_qty }}" max="10">
                                                 <button class="btn  col-auto btn-icon btn-sm btn-circle btn-light" type="button" data-type="plus" data-field="quantity">
                                                     <i class="las la-plus"></i>
                                                 </button>
@@ -838,8 +838,8 @@
                             <p class="text-muted mb-0">{{ translate('Dont have an account?')}}</p>
                             <a href="{{ route('user.registration') }}">{{ translate('Register Now')}}</a>
                         </div>
-                        @if(get_setting('google_login') == 1 || 
-                            get_setting('facebook_login') == 1 || 
+                        @if(get_setting('google_login') == 1 ||
+                            get_setting('facebook_login') == 1 ||
                             get_setting('twitter_login') == 1)
                             <div class="separator mb-3">
                                 <span class="bg-white px-3 opacity-60">{{ translate('Or Login With')}}</span>

@@ -211,6 +211,36 @@
                                 <input type="number" lang="en" min="0" value="0" step="0.01" placeholder="{{ translate('Unit price') }}" name="unit_price" class="form-control" required>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 control-label">{{__('Price Range 1')}}</label>
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="{{__('0-10 or 10-20 or >20')}}" name="range_1" class="form-control" >
+                            </div>
+                            <label class="col-lg-1 control-label">{{__('Price ')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" min="0" value="0.00" step="0.01" placeholder="{{__('Price')}}" name="range_1_price" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 control-label">{{__('Price Range 2')}}</label>
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="{{__('0-10 or 10-20 or >20')}}" name="range_2" class="form-control" >
+                            </div>
+                            <label class="col-lg-1 control-label">{{__('Price ')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" min="0" value="0.00" step="0.01" placeholder="{{__('Price')}}" name="range_2_price" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 control-label">{{__('Price Range 3')}}</label>
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="{{__('0-10 or 10-20 or >20')}}" name="range_3" class="form-control" >
+                            </div>
+                            <label class="col-lg-1 control-label">{{__('Price ')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" min="0" value="0.00" step="0.01" placeholder="{{__('Price')}}" name="range_3_price" class="form-control" >
+                            </div>
+                        </div>
 <!--                        <div class="form-group row">
                             <label class="col-md-3 col-from-label">{{translate('Purchase price')}} <span class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -243,7 +273,7 @@
                                 </select>
                             </div>
                         </div>
-                        
+
                         <div id="show-hide-div">
                             <div class="form-group row">
                                 <label class="col-md-3 col-from-label">{{translate('Quantity')}} <span class="text-danger">*</span></label>
@@ -408,7 +438,7 @@
                             </div>
                             @endforeach
                         </div>
-                        
+
                         <div class="form-group row">
                             <label class="col-md-6 col-from-label">{{translate('Is Product Quantity Mulitiply')}}</label>
                             <div class="col-md-6">
@@ -510,7 +540,7 @@
                         @endif
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('Featured')}}</h5>
@@ -726,7 +756,7 @@
         $.each($("#choice_attributes option:selected"), function(){
             add_more_customer_choice_option($(this).val(), $(this).text());
         });
-        
+
         update_sku();
     });
 

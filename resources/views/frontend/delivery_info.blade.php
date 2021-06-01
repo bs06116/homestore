@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="pt-5 mb-4">
+<section class="pt-3 mb-3">
     <div class="container">
         <div class="row">
             <div class="col-xl-8 mx-auto">
@@ -92,7 +92,7 @@
                                 </li>
                                 @endforeach
                             </ul>
-                            
+
                             <div class="row border-top pt-3">
                                 <div class="col-md-6">
                                     <h6 class="fs-15 fw-600">{{ translate('Choose Delivery Type') }}</h6>
@@ -155,7 +155,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="card-footer justify-content-end">
                             <button type="submit" name="owner_id" value="{{ App\User::where('user_type', 'admin')->first()->id }}" class="btn fw-600 btn-primary">{{ translate('Continue to Payment')}}</a>
@@ -191,7 +191,7 @@
                                         </li>
                                         @endforeach
                                     </ul>
-                                    
+
                                     <div class="row border-top pt-3">
                                         <div class="col-md-6">
                                             <h6 class="fs-15 fw-600">{{ translate('Choose Delivery Type') }}</h6>
@@ -262,7 +262,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="card-footer justify-content-end">
                                     <button type="submit" name="owner_id" value="{{ $key }}" class="btn fw-600 btn-primary">{{ translate('Continue to Payment')}}</a>
