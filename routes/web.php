@@ -56,6 +56,8 @@ Route::post('/home/section/featured', 'HomeController@load_featured_section')->n
 Route::post('/home/section/best_selling', 'HomeController@load_best_selling_section')->name('home.section.best_selling');
 Route::post('/home/section/home_categories', 'HomeController@load_home_categories_section')->name('home.section.home_categories');
 Route::post('/home/section/best_sellers', 'HomeController@load_best_sellers_section')->name('home.section.best_sellers');
+Route::post('/home/section/load_all_product', 'HomeController@load_all_product')->name('home.section.load_all_product');
+
 //category dropdown menu ajax call
 Route::post('/category/nav-element-list', 'HomeController@get_category_items')->name('category.elements');
 
@@ -214,7 +216,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/orders/update_delivery_status', 'OrderController@update_delivery_status')->name('orders.update_delivery_status');
     Route::post('/orders/update_payment_status', 'OrderController@update_payment_status')->name('orders.update_payment_status');
     Route::post('/orders/delivery-boy-assign', 'OrderController@assign_delivery_boy')->name('orders.delivery-boy-assign');
-    
+
     Route::resource('/reviews', 'ReviewController');
 
     Route::resource('/withdraw_requests', 'SellerWithdrawRequestController');

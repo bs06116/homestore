@@ -240,6 +240,11 @@ class HomeController extends Controller
     public function load_best_sellers_section(){
         return view('frontend.partials.best_sellers_section');
     }
+    public function load_all_product(Request $request){
+        $output = '';
+        $data['id'] = $request->id;
+        return view('frontend.partials.load_all_product',$data);
+    }
 
     public function trackOrder(Request $request)
     {
