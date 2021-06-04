@@ -10,6 +10,7 @@ use App\Category;
 use App\FlashDealProduct;
 use App\ProductTax;
 use App\Language;
+use App\ProductTier;
 use Auth;
 use App\SubSubCategory;
 use Session;
@@ -146,6 +147,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
 //        dd($request->all());
         $refund_request_addon = \App\Addon::where('unique_identifier', 'refund_request')->first();
 
@@ -190,12 +192,12 @@ class ProductController extends Controller
         $product->video_provider = $request->video_provider;
         $product->video_link = $request->video_link;
         $product->unit_price = $request->unit_price;
-        $product->range_1 = $request->range_1;
-        $product->range_1_price = $request->range_1_price;
-        $product->range_2 = $request->range_2;
-        $product->range_2_price = $request->range_2_price;
-        $product->range_3 = $request->range_3;
-        $product->range_3_price = $request->range_3_price;
+        // $product->range_1 = $request->range_1;
+        // $product->range_1_price = $request->range_1_discount;
+        // $product->range_2 = $request->range_2;
+        // $product->range_2_price = $request->range_2_discount;
+        // $product->range_3 = $request->range_3;
+        // $product->discount = $request->range_3_discount;
 
 //        $product->purchase_price = $request->purchase_price;
 //        $product->tax = $request->tax;
@@ -303,6 +305,17 @@ class ProductController extends Controller
         //$variations = array();
 
         $product->save();
+
+        //Price Range
+        if($request->range) {
+            $dataRange = [];
+            foreach ($request->range as $key => $val) {
+                $dataRange[] = array('product_id'=>$product->id,'name'=>$request->range_name[$key],'discount'=>$request->discount_range[$key],
+                'min_quantity'=> $request->min_quantity[$key],'max_quantity'=>$request->max_quantity[$key]);
+            }
+            ProductTier::insert($dataRange);
+        }
+
 
         //VAT & Tax
         if($request->tax_id) {
@@ -437,11 +450,12 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $lang = $request->lang;
         $tags = json_decode($product->tags);
+        $tier = ProductTier::where('product_id',$product->id)->get();
         $categories = Category::where('parent_id', 0)
             ->where('digital', 0)
             ->with('childrenCategories')
             ->get();
-        return view('backend.product.products.edit', compact('product', 'categories', 'tags','lang'));
+        return view('backend.product.products.edit', compact('product', 'categories', 'tags','lang','tier'));
      }
 
     /**
@@ -468,6 +482,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+
 
         $refund_request_addon       = \App\Addon::where('unique_identifier', 'refund_request')->first();
         $product                    = Product::findOrFail($id);
@@ -514,12 +529,12 @@ class ProductController extends Controller
         $product->video_provider = $request->video_provider;
         $product->video_link     = $request->video_link;
         $product->unit_price     = $request->unit_price;
-        $product->range_1 = $request->range_1;
-        $product->range_1_price = $request->range_1_price;
-        $product->range_2 = $request->range_2;
-        $product->range_2_price = $request->range_2_price;
-        $product->range_3 = $request->range_3;
-        $product->range_3_price = $request->range_3_price;
+        // $product->range_1 = $request->range_1;
+        // $product->range_1_price = $request->range_1_price;
+        // $product->range_2 = $request->range_2;
+        // $product->range_2_price = $request->range_2_price;
+        // $product->range_3 = $request->range_3;
+        // $product->range_3_price = $request->range_3_price;
 
 //        $product->purchase_price = $request->purchase_price;
 //        $product->tax            = $request->tax;
@@ -537,6 +552,16 @@ class ProductController extends Controller
             elseif ($request->shipping_type == 'product_wise') {
                 $product->shipping_cost = json_encode($request->shipping_cost);
             }
+        }
+        if($request->range_name) {
+            ProductTier::where('product_id',$product->id)->delete();
+            $dataRange = [];
+            foreach ($request->range_name as $key => $val) {
+                if(!empty($request->range_name[$key]))
+                $dataRange[] = array('product_id'=>$product->id,'range_name'=>$request->range_name[$key],'discount_range'=>$request->discount_range[$key],
+                'min_quantity'=> $request->min_quantity[$key],'max_quantity'=>$request->max_quantity[$key]);
+            }
+            ProductTier::insert($dataRange);
         }
 
         if ($request->has('is_quantity_multiplied')) {

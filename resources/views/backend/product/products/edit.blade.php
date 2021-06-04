@@ -260,39 +260,66 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group row">
-                            <label class="col-lg-3 col-from-label">{{translate('Unit price')}}</label>
+                            <label class="col-lg-2 col-from-label">{{translate('Unit price')}}</label>
                             <div class="col-lg-6">
                                 <input type="text" placeholder="{{translate('Unit price')}}" name="unit_price" class="form-control" value="{{$product->unit_price}}" required>
                             </div>
                         </div>
+
                         <div class="form-group row">
-                            <label class="col-lg-3 control-label">{{__('Price Range 1')}}</label>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="{{__('0-10 or 10-20 or >20')}}" name="range_1" value="{{$product->range_1}}" class="form-control">
-                            </div>
-                            <label class="col-lg-1 control-label">{{__('Price ')}}</label>
+                            <label class="col-lg-2 control-label">{{__('Price Range 1')}}</label>
                             <div class="col-lg-2">
-                                <input type="number" min="0" value="{{$product->range_1_price}}" step="0.01" placeholder="{{__('Price')}}" name="range_1_price" class="form-control">
+                                <input type="text" placeholder="{{__('0-10')}}" value="<?php if(isset($tier[0]->range_name)){echo $tier[0]->range_name;}?>" name="range_name[]" class="form-control" >
+                            </div>
+                            <label>{{__('Min')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" min="1"  value="<?php if(isset($tier[0]->min_quantity)){echo $tier[0]->min_quantity;}?>"   placeholder="{{__('Min')}}" name="min_quantity[]" class="form-control" >
+                            </div>
+                            <label>{{__('Max')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" min="1" value="<?php if(isset($tier[0]->	max_quantity)){echo $tier[0]->	max_quantity;}?>"   placeholder="{{__('Max')}}" name="max_quantity[]" class="form-control" >
+                            </div>
+                            <label>{{__('Discount % ')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number"  placeholder="{{__('Discount')}}" value="<?php if(isset($tier[0]->discount_range)){echo $tier[0]->discount_range;}?>"  name="discount_range[]" class="form-control" >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-lg-3 control-label">{{__('Price Range 2')}}</label>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="{{__('0-10 or 10-20 or >20')}}" name="range_2" value="{{$product->range_2}}" class="form-control" >
-                            </div>
-                            <label class="col-lg-1 control-label">{{__('Price ')}}</label>
+                            <label class="col-lg-2 control-label">{{__('Price Range 2')}}</label>
                             <div class="col-lg-2">
-                                <input type="number" min="0" value="{{$product->range_2_price}}" step="0.01" placeholder="{{__('Price')}}" name="range_2_price" class="form-control" >
+                                <input type="text" placeholder="{{__('10-20')}}" value="<?php if(isset($tier[1]->range_name)){echo $tier[1]->range_name;}?>"  name="range_name[]" class="form-control" >
+                            </div>
+                            <label>{{__('Min')}}</label>
+
+                            <div class="col-lg-2">
+                                <input type="number" min="1"  value="<?php if(isset($tier[1]->min_quantity)){echo $tier[1]->min_quantity;}?>"  placeholder="{{__('Min')}}" name="min_quantity[]" class="form-control" >
+                            </div>
+                            <label>{{__('Max')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" min="1" value="<?php if(isset($tier[1]->max_quantity)){echo $tier[1]->max_quantity;}?>"  placeholder="{{__('Max')}}" name="max_quantity[]" class="form-control" >
+                            </div>
+                            <label>{{__('Discount %')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" value="<?php if(isset($tier[1]->discount_range)){echo $tier[1]->discount_range;}?>" placeholder="{{__('Discount')}}" name="discount_range[]" class="form-control" >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-lg-3 control-label">{{__('Price Range 3')}}</label>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="{{__('0-10 or 10-20 or >20')}}" name="range_3" value="{{$product->range_3}}" class="form-control" >
-                            </div>
-                            <label class="col-lg-1 control-label">{{__('Price ')}}</label>
+                            <label class="col-lg-2 control-label">{{__('Price Range 3')}}</label>
                             <div class="col-lg-2">
-                                <input type="number" min="0" value="{{$product->range_3_price}}" step="0.01" placeholder="{{__('Price')}}" name="range_3_price" class="form-control" >
+                                <input type="text" placeholder="{{__('>20')}}" value="<?php if(isset($tier[2]->range_name)){echo $tier[2]->range_name;}?>" name="range_name[]" class="form-control" >
+                            </div>
+                            <label>{{__('Min')}}</label>
+
+                            <div class="col-lg-2">
+                                <input type="number" min="1" placeholder="{{__('Min')}}" value="<?php if(isset($tier[2]->min_quantity)){echo $tier[2]->min_quantity;}?>" name="min_quantity[]" class="form-control" >
+                            </div>
+                            <label>{{__('Max')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" min="1"  placeholder="{{__('Max')}}" value="<?php if(isset($tier[2]->max_quantity)){echo $tier[2]->max_quantity;}?>" name="max_quantity[]" class="form-control" >
+                            </div>
+                            <label >{{__('Discount % ')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" placeholder="{{__('Discount')}}" value="<?php if(isset($tier[2]->discount_range)){echo $tier[2]->discount_range;}?>" name="discount_range[]" class="form-control" >
                             </div>
                         </div>
 <!--                        <div class="form-group row">
@@ -314,7 +341,7 @@
                             </div>
                         </div>-->
                         <div class="form-group row">
-                            <label class="col-lg-3 col-from-label">{{translate('Discount')}}</label>
+                            <label class="col-lg-2 col-from-label">{{translate('Discount')}}</label>
                             <div class="col-lg-6">
                                 <input type="number" lang="en" min="0" step="0.01" placeholder="{{translate('Discount')}}" name="discount" class="form-control" value="{{ $product->discount }}" required>
                             </div>
@@ -328,13 +355,13 @@
 
                         <div id="show-hide-div">
                             <div class="form-group row" id="quantity">
-                                <label class="col-lg-3 col-from-label">{{translate('Quantity')}}</label>
+                                <label class="col-lg-2 col-from-label">{{translate('Quantity')}}</label>
                                 <div class="col-lg-6">
                                     <input type="number" lang="en" value="{{ $product->stocks->first()->qty }}" step="1" placeholder="{{translate('Quantity')}}" name="current_stock" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-3 col-from-label">
+                                <label class="col-md-2 col-from-label">
                                     {{translate('SKU')}}
                                 </label>
                                 <div class="col-md-6">

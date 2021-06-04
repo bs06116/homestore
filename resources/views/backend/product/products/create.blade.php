@@ -206,39 +206,65 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group row">
-                            <label class="col-md-3 col-from-label">{{translate('Unit price')}} <span class="text-danger">*</span></label>
+                            <label class="col-md-2 col-from-label">{{translate('Unit price')}} <span class="text-danger">*</span></label>
                             <div class="col-md-6">
                                 <input type="number" lang="en" min="0" value="0" step="0.01" placeholder="{{ translate('Unit price') }}" name="unit_price" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-lg-3 control-label">{{__('Price Range 1')}}</label>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="{{__('0-10 or 10-20 or >20')}}" name="range_1" class="form-control" >
-                            </div>
-                            <label class="col-lg-1 control-label">{{__('Price ')}}</label>
+                            <label class="col-lg-2 control-label">{{__('Price Range 1')}}</label>
                             <div class="col-lg-2">
-                                <input type="number" min="0" value="0.00" step="0.01" placeholder="{{__('Price')}}" name="range_1_price" class="form-control" >
+                                <input type="text" placeholder="{{__('0-10')}}" name="range[]" class="form-control" >
+                            </div>
+                            <label>{{__('Min')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" min="1"  placeholder="{{__('Min')}}" name="min[]" class="form-control" >
+                            </div>
+                            <label>{{__('Max')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" min="1"  placeholder="{{__('Max')}}" name="max[]" class="form-control" >
+                            </div>
+                            <label>{{__('Discount % ')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number"  placeholder="{{__('Discount')}}" name="discount_range[]" class="form-control" >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-lg-3 control-label">{{__('Price Range 2')}}</label>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="{{__('0-10 or 10-20 or >20')}}" name="range_2" class="form-control" >
-                            </div>
-                            <label class="col-lg-1 control-label">{{__('Price ')}}</label>
+                            <label class="col-lg-2 control-label">{{__('Price Range 2')}}</label>
                             <div class="col-lg-2">
-                                <input type="number" min="0" value="0.00" step="0.01" placeholder="{{__('Price')}}" name="range_2_price" class="form-control" >
+                                <input type="text" placeholder="{{__('10-20')}}" name="range[]" class="form-control" >
+                            </div>
+                            <label>{{__('Min')}}</label>
+
+                            <div class="col-lg-2">
+                                <input type="number" min="1"  placeholder="{{__('Min')}}" name="min[]" class="form-control" >
+                            </div>
+                            <label>{{__('Max')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" min="1"   placeholder="{{__('Max')}}" name="max[]" class="form-control" >
+                            </div>
+                            <label>{{__('Discount %')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number"  placeholder="{{__('Discount')}}" name="discount_range[]" class="form-control" >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-lg-3 control-label">{{__('Price Range 3')}}</label>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="{{__('0-10 or 10-20 or >20')}}" name="range_3" class="form-control" >
-                            </div>
-                            <label class="col-lg-1 control-label">{{__('Price ')}}</label>
+                            <label class="col-lg-2 control-label">{{__('Price Range 3')}}</label>
                             <div class="col-lg-2">
-                                <input type="number" min="0" value="0.00" step="0.01" placeholder="{{__('Price')}}" name="range_3_price" class="form-control" >
+                                <input type="text" placeholder="{{__('>20')}}" name="range[]" class="form-control" >
+                            </div>
+                            <label>{{__('Min')}}</label>
+
+                            <div class="col-lg-2">
+                                <input type="number" min="1" placeholder="{{__('Min')}}" name="min[]" class="form-control" >
+                            </div>
+                            <label>{{__('Max')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" min="1"   placeholder="{{__('Max')}}" name="max[]" class="form-control" >
+                            </div>
+                            <label >{{__('Discount % ')}}</label>
+                            <div class="col-lg-2">
+                                <input type="number" placeholder="{{__('Discount')}}" name="discount_range[]" class="form-control" >
                             </div>
                         </div>
 <!--                        <div class="form-group row">
@@ -262,7 +288,7 @@
                         </div>
                         --}}
                         <div class="form-group row">
-                            <label class="col-md-3 col-from-label">{{translate('Discount')}} <span class="text-danger">*</span></label>
+                            <label class="col-md-2 col-from-label">{{translate('Discount')}} <span class="text-danger">*</span></label>
                             <div class="col-md-6">
                                 <input type="number" lang="en" min="0" value="0" step="0.01" placeholder="{{ translate('Discount') }}" name="discount" class="form-control" required>
                             </div>
@@ -276,13 +302,13 @@
 
                         <div id="show-hide-div">
                             <div class="form-group row">
-                                <label class="col-md-3 col-from-label">{{translate('Quantity')}} <span class="text-danger">*</span></label>
+                                <label class="col-md-2 col-from-label">{{translate('Quantity')}} <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
                                     <input type="number" lang="en" min="0" value="0" step="1" placeholder="{{ translate('Quantity') }}" name="current_stock" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-3 col-from-label">
+                                <label class="col-md-2 col-from-label">
                                     {{translate('SKU')}}
                                 </label>
                                 <div class="col-md-6">
