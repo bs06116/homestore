@@ -259,7 +259,7 @@
                                 </h3>
                                 <a href="{{ route('customer.products') }}" class="ml-auto mr-0 btn btn-primary btn-sm shadow-md">{{ translate('View More') }}</a>
                             </div>
-                           <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="6" data-xl-items="5" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='true'>
+            <div class="aiz-carousel gutters-10 half-outside-arrow " data-dots="true" data-arrows='false' data-infinite='false' data-items="6" data-xl-items="5" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="2" >
                                @foreach ($classified_products as $key => $classified_product)
                                    <div class="carousel-box">
                                         <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition">
@@ -421,7 +421,7 @@
                 </div>
                 <div class="row gutters-5 row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-2" id="load-data">
 
-                    @foreach (filter_products(\App\Product::where('published', 1))->orderBy('created_at','DESC')->limit(5)->get() as $key => $product)
+                    @foreach (filter_products(\App\Product::where('published', 1))->orderBy('created_at','DESC')->limit(6)->get() as $key => $product)
                     <div class="col mb-3">
                         <div class="aiz-card-box h-100 border border-light rounded shadow-sm hov-shadow-md has-transition bg-white">
                             <div class="position-relative">
@@ -472,11 +472,11 @@
 
                     </div>
                     @endforeach
-                    <div id="remove-row">
-                        <button id="btn-more" data-id="{{ $product->id }}" class="ml-auto mr-0 btn btn-primary btn-sm shadow-md" > Load More </button>
-                    </div>
-                </div>
 
+                </div>
+                <div id="remove-row" class="text-center">
+                    <button id="btn-more" data-id="{{ $product->id }}" class="ml-auto mr-0 btn btn-primary btn-sm shadow-md" > Load More </button>
+                </div>
             </div>
         </div>
     </section>

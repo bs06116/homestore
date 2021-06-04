@@ -6,7 +6,7 @@
                     <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">{{ translate('New Arrivals') }}</span>
                 </h3>
             </div>
-            <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="6" data-xl-items="5" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='true'>
+            <div class="aiz-carousel gutters-10 half-outside-arrow " data-dots="true" data-arrows='false' data-infinite='false' data-items="6" data-xl-items="5" data-lg-items="4"  data-md-items="3" data-sm-items="3" data-xs-items="3" >
 
                 @foreach (filter_products(\App\Product::where('published', 1)->where('created_at', '>=', \Carbon\Carbon::today()->subDays(7)))->get() as $key => $product)
                 <div class="carousel-box">
@@ -71,7 +71,7 @@
                     <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">{{ translate('Featured Products') }}</span>
                 </h3>
             </div>
-            <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="6" data-xl-items="5" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='true'>
+            <div class="aiz-carousel gutters-10 half-outside-arrow " data-dots="true" data-arrows='false' data-infinite='false' data-items="6" data-xl-items="5" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="2" >
                 @foreach (filter_products(\App\Product::where('published', 1)->where('featured', '1'))->limit(12)->get() as $key => $product)
                 <div class="carousel-box">
                     <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition">
