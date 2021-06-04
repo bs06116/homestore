@@ -21738,7 +21738,7 @@ table.footable-editing.footable-editing-show button.footable-hide {
 [dir="rtl"] .slick-slide {
     float: right;
 }
-.slick-slide img  {
+.slick-slide img {
     display: block;
 }
 .slick-slide.slick-loading img {
@@ -21747,6 +21747,7 @@ table.footable-editing.footable-editing-show button.footable-hide {
 .slick-slide.dragging img {
     pointer-events: none;
 }
+
 .slick-initialized .slick-slide {
     display: block;
 }
