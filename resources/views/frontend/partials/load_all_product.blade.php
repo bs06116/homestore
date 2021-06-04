@@ -57,7 +57,7 @@
             <div id="remove-row">
                 
                         <button id="btn-more" data-id="<?php echo $product->id?>"
-                            class="ml-auto mr-0 btn btn-primary btn-sm shadow-md d-block" >  Load More </button>
+                            class="ml-auto mr-0 btn btn-primary btn-sm shadow-md d-block " >  Load More </button>
                     </div>
 
  <?php }?>
