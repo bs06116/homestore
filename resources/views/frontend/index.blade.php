@@ -419,7 +419,7 @@
                         <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">{{ translate('All Products') }}</span>
                     </h3>
                 </div>
-                <div class="row gutters-5 row-cols-xxl-4 row-cols-xl-3 row-cols-lg-4 row-cols-md-3 row-cols-2" id="load-data">
+                <div class="row gutters-5 row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-2" id="load-data">
 
                     @foreach (filter_products(\App\Product::where('published', 1))->orderBy('created_at','DESC')->limit(5)->get() as $key => $product)
                     <div class="col mb-3">
@@ -427,7 +427,8 @@
                             <div class="position-relative">
                                 <a href="{{ route('product', $product->slug) }}" class="d-block">
                                     <img
-                                        class="img-fit lazyload mx-auto h-160px h-md-220px h-xl-270px h-xxl-250px"
+                                        class="img-fit lazyload mx-auto h-120px h-md-150px "
+                                         style=" margin-top: 8px ; "
                                         src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                         data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                         alt="{{  $product->getTranslation('name')  }}"

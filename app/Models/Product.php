@@ -6,6 +6,8 @@ use App\FlashDealProduct;
 use App\ProductTax;
 use App\User;
 use App\Wishlist;
+use App\ProductTier;
+
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -131,7 +133,13 @@ class Product extends Model
 
     public function stocks()
     {
+
         return $this->hasMany(ProductStock::class);
+    }
+    public function tiers()
+    {
+        return true;
+        return $this->hasMany(ProductTier::class);
     }
 
     public function wishlists() {

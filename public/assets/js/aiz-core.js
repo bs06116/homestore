@@ -838,7 +838,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                     }
                     $this.selectpicker({
                         size: 5,
-                        noneSelectedText: AIZ.local.nothing_selected,                     
+                        noneSelectedText: AIZ.local.nothing_selected,
                         virtualScroll: false
                     });
                 }
@@ -1322,7 +1322,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                             max: parseInt(c.getAttribute("data-range-value-max")),
                         },
                     }),
-                    
+
                     c.noUiSlider.on("update", function (a, b) {
                         f[b].textContent = a[b];
                     }),
@@ -1666,7 +1666,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                 var type = $(this).attr("data-type");
                 var input = $("input[name='" + fieldName + "']");
                 var currentVal = parseInt(input.val());
-                
+
 
                 if (!isNaN(currentVal)) {
                     if (type == "minus") {
@@ -1700,12 +1700,12 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                     alert("Sorry, the minimum value was reached");
                     $(this).val($(this).data("oldValue"));
                 }
-                if (valueCurrent <= maxValue) {
-                    $(this).siblings("[data-type='plus']").removeAttr("disabled");
-                } else {
-                    alert("Sorry, the maximum value was reached");
-                    $(this).val($(this).data("oldValue"));
-                }
+                // if (valueCurrent <= maxValue) {
+                //     $(this).siblings("[data-type='plus']").removeAttr("disabled");
+                // } else {
+                //     alert("Sorry, the maximum value was reached");
+                //     $(this).val($(this).data("oldValue"));
+                // }
             });
         },
         hovCategoryMenu: function(){
