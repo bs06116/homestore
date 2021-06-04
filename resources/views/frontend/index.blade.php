@@ -424,11 +424,11 @@
                     @foreach (filter_products(\App\Product::where('published', 1))->orderBy('created_at','DESC')->limit(6)->get() as $key => $product)
                     <div class="col mb-3">
                         <div class="aiz-card-box h-100 border border-light rounded shadow-sm hov-shadow-md has-transition bg-white">
-                            <div class="position-relative">
+                            <div class="position-relative text-center">
                                 <a href="{{ route('product', $product->slug) }}" class="d-block">
                                     <img
                                         class="img-fit lazyload mx-auto h-120px h-md-150px "
-                                         style=" margin-top: 8px ; "
+                                        style="width: 90% ; margin-top: 8px ; border-radius: 5px 5px 0px 0px ; "
                                         src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                         data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                         alt="{{  $product->getTranslation('name')  }}"
@@ -474,9 +474,9 @@
                     @endforeach
 
                 </div>
-                <div id="remove-row" class="text-center">
-                    <button id="btn-more" data-id="{{ $product->id }}" class="ml-auto mr-0 btn btn-primary btn-sm shadow-md" > Load More </button>
-                </div>
+                <div id="remove-row" class = "text-center">
+                        <button id="btn-more" data-id="{{ $product->id }}" class="ml-auto mr-0 btn btn-primary btn-sm shadow-md" > Load More </button>
+                    </div>
             </div>
         </div>
     </section>

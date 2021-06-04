@@ -121,7 +121,11 @@ pre {
 .no-scrollbar::-webkit-scrollbar-thumb {
     background: transparent;
 }
-
+.product-img-fit {
+    width: 90%;
+    margin-top: 8px;
+    border-radius: 5px 5px 0px 0px;
+}
 .img-fit {
     max-height: 100%;
     width: 100%;
@@ -8384,8 +8388,8 @@ div.footable-loader > span.fooicon:after {
     width: calc(100% + 20px);
 }
 .aiz-carousel.gutters-10 .carousel-box {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 .aiz-carousel.gutters-15 {
     width: calc(100% + 30px);
