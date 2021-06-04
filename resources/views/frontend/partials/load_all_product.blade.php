@@ -8,7 +8,8 @@
                             <div class="position-relative">
                                 <a href="{{ route('product', $product->slug) }}" class="d-block">
                                     <img
-                                        class="img-fit lazyload mx-auto h-160px h-md-220px h-xl-270px h-xxl-250px"
+                                        class="img-fit lazyload mx-auto h-120px h-md-150px "
+                                         style=" margin-top: 8px ; "
                                         src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                         data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                         alt="{{  $product->getTranslation('name')  }}"
@@ -52,9 +53,11 @@
 
                     </div>
                     @endforeach
+                    
             <div id="remove-row">
+                
                         <button id="btn-more" data-id="<?php echo $product->id?>"
-                            class="ml-auto mr-0 btn btn-primary btn-sm shadow-md" > Load More </button>
+                            class="ml-auto mr-0 btn btn-primary btn-sm shadow-md d-block" >  Load More </button>
                     </div>
 
  <?php }?>
