@@ -53,9 +53,9 @@
 
                     </div>
                     @endforeach
-                    
-            <div id="remove-row">
-                
+
+            <div id="remove-row" class="text-center">
+
                         <button id="btn-more" data-id="<?php echo $product->id?>"
                             class="ml-auto mr-0 btn btn-primary btn-sm shadow-md d-block " >  Load More </button>
                     </div>

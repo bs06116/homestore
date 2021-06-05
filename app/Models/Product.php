@@ -138,7 +138,6 @@ class Product extends Model
     }
     public function tiers()
     {
-        return true;
         return $this->hasMany(ProductTier::class);
     }
 
