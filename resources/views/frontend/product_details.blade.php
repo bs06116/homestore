@@ -35,16 +35,16 @@
 @endsection
 
 @section('content')
-    <section class="mb-4 pt-3">
-        <div class="container">
-            <div class="bg-white shadow-sm rounded p-3">
+    <section class="mb-4 ">
+        <div class="container p-0">
+            <div class=" shadow-sm rounded pl-3 pr-3 pb-3">
                 <div class="row">
-                    <div class="col-xl-5 col-lg-6 mb-4">
+                    <div class="col-xl-5 col-lg-6 mb-4 p-0">
                         <div class="sticky-top z-3 row gutters-10">
                             @php
                                 $photos = explode(',', $detailedProduct->photos);
                             @endphp
-                            <div class="col order-1 order-md-2">
+                            <div class="col order-1 order-md-3 ">
                                 <div class="aiz-carousel product-gallery" data-nav-for='.product-gallery-thumb' data-fade='true' data-auto-height='true'>
                                     @foreach ($photos as $key => $photo)
                                         <div class="carousel-box img-zoom rounded">
@@ -100,7 +100,7 @@
                     </div>
 
                     <div class="col-xl-7 col-lg-6">
-                        <div class="text-left">
+                        <div class="text-left pt-3">
                             <h1 class="mb-2 fs-20 fw-600">
                                 {{ $detailedProduct->getTranslation('name') }}
                             </h1>
