@@ -474,7 +474,7 @@
                     @endforeach
 
                 </div>
-                <div id="remove-row" class = "text-center">
+                <div id="remove-row" class= "text-center">
                         <button id="btn-more" data-id="{{ $product->id }}" class="ml-auto mr-0 btn btn-primary btn-sm shadow-md" > Load More </button>
                     </div>
             </div>

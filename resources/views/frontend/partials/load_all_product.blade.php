@@ -1,5 +1,5 @@
 <?php
-  $result = \App\Product::where('published', 1)->where('id','<',$id)->orderBy('created_at','DESC')->limit(5)->get();
+  $result = \App\Product::where('published', 1)->where('id','<',$id)->orderBy('created_at','DESC')->limit(6)->get();
   if(count($result)>0) {
 ?>
 @foreach ( $result as $key => $product)
@@ -9,7 +9,7 @@
                                 <a href="{{ route('product', $product->slug) }}" class="d-block">
                                     <img
                                         class="img-fit lazyload mx-auto h-120px h-md-150px "
-                                        style="width: 90% ; margin-top: 8px ; border-radius: 5px 5px 0px 0px ;  " 
+                                        style="width: 90% ; margin-top: 8px ; border-radius: 5px 5px 0px 0px ;  "
                                         src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                         data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                         alt="{{  $product->getTranslation('name')  }}"
@@ -55,7 +55,6 @@
                     @endforeach
 
             <div id="remove-row" class="text-center">
-
                         <button id="btn-more" data-id="<?php echo $product->id?>"
                             class="ml-auto mr-0 btn btn-primary btn-sm shadow-md d-block" >  Load More </button>
                     </div>
