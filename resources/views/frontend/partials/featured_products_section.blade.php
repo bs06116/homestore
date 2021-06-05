@@ -10,12 +10,12 @@
 
                 @foreach (filter_products(\App\Product::where('published', 1)->where('created_at', '>=', \Carbon\Carbon::today()->subDays(7)))->get() as $key => $product)
                 <div class="carousel-box">
-                    <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition">
+                    <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition bg-change">
                         <div class="position-relative">
                             <a href="{{ route('product', $product->slug) }}" class="d-block">
                                 <img
-                                    class="img-fit lazyload mx-auto h-120px h-md-150px "
-                                    style=" margin-top: 8px ; border-radius: 5px 5px 0px 0px ;  "
+                                    class="img-fit lazyload mx-auto h-120px h-md-150px fit-products-img"
+                                    
                                     src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                     data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                     alt="{{  $product->getTranslation('name')  }}"
@@ -71,15 +71,15 @@
                     <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">{{ translate('Featured Products') }}</span>
                 </h3>
             </div>
-            <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="7" data-xl-items="6" data-lg-items="5"  data-md-items="4" data-sm-items="4" data-xs-items="3" data-arrows='false' data-dots="true" data-infinite='false'>
+            <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="7" data-xl-items="6" data-lg-items="5"  data-md-items="4" data-sm-items="3" data-xs-items="3" data-arrows='false' data-dots="true" data-infinite='false'>
                 @foreach (filter_products(\App\Product::where('published', 1)->where('featured', '1'))->limit(12)->get() as $key => $product)
                 <div class="carousel-box">
-                    <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition">
+                    <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition .bg-change">
                         <div class="position-relative">
                             <a href="{{ route('product', $product->slug) }}" class="d-block">
                                 <img
-                                     class="img-fit lazyload mx-auto h-120px h-md-150px "
-                                     style="width: 100% ; margin-top: 8px ; border-radius: 5px 5px 0px 0px ;  "
+                                     class="img-fit lazyload mx-auto h-120px h-md-150px fit-products-img"
+                                     
                                     src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                     data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                     alt="{{  $product->getTranslation('name')  }}"

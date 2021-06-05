@@ -427,8 +427,8 @@
                             <div class="position-relative text-center">
                                 <a href="{{ route('product', $product->slug) }}" class="d-block">
                                     <img
-                                        class="img-fit lazyload mx-auto h-120px h-md-150px "
-                                        style="width: 90% ; margin-top: 8px ; border-radius: 5px 5px 0px 0px ; "
+                                        class="img-fit lazyload mx-auto h-120px h-md-150px fit-products-img"
+                                        
                                         src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                         data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                         alt="{{  $product->getTranslation('name')  }}"
@@ -474,7 +474,7 @@
                     @endforeach
 
                 </div>
-                <div id="remove-row" class = "text-center">
+                <div id="remove-row" class= "text-center">
                         <button id="btn-more" data-id="{{ $product->id }}" class="ml-auto mr-0 btn btn-primary btn-sm shadow-md" > Load More </button>
                     </div>
             </div>

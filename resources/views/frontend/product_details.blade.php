@@ -47,8 +47,9 @@
                             <div class="col order-1 order-md-3 ">
                                 <div class="aiz-carousel product-gallery" data-nav-for='.product-gallery-thumb' data-fade='true' data-auto-height='true'>
                                     @foreach ($photos as $key => $photo)
-                                        <div class="carousel-box img-zoom rounded">
+                                        <div class="carousel-box img-zoom rounded "  onclick="largeImage('{{ uploaded_asset($photo) }}')">
                                             <img
+
                                                 class="img-fluid lazyload"
                                                 src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                                 data-src="{{ uploaded_asset($photo) }}"
@@ -60,6 +61,7 @@
                                         @if ($stock->image != null)
                                             <div class="carousel-box img-zoom rounded">
                                                 <img
+
                                                     class="img-fluid lazyload"
                                                     src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                                     data-src="{{ uploaded_asset($stock->image) }}"
@@ -70,6 +72,7 @@
                                     @endforeach
                                 </div>
                             </div>
+
                             <div class="col-12 col-md-auto w-md-80px order-2 order-md-1 mt-3 mt-md-0">
                                 <div class="aiz-carousel product-gallery-thumb" data-items='5' data-nav-for='.product-gallery' data-vertical='true' data-vertical-sm='false' data-focus-select='true' data-arrows='true'>
                                     @foreach ($photos as $key => $photo)
@@ -873,6 +876,11 @@
             </div>
         </div>
     </div>
+    <div id="myModal" class="modal">
+        <span class="close1"><i class="las la-window-close"></i></span>
+        <span class="download-btn" onclick="downloadCanvas(this);"><i class="las la-save"></i></span>
+        <img class="modal-content modal-content-img" id="img01">
+   </div>
 @endsection
 
 @section('script')
@@ -917,6 +925,27 @@
                 $('#login_modal').modal('show');
             @endif
         }
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        function largeImage(img){
+             modal.style.display = "block";
+             modalImg.src = img;
+             captionText.innerHTML = 'text';
+        }
+        var span = document.getElementsByClassName("close1")[0];
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+        async function downloadCanvas(el) {
+            var link = document.createElement('a');
+            link.download = "my-image.png";
+            link.href = $('#img01').attr('src');
+            link.click();
+
+
+        };
 
     </script>
 @endsection
