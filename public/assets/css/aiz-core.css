@@ -121,11 +121,7 @@ pre {
 .no-scrollbar::-webkit-scrollbar-thumb {
     background: transparent;
 }
-.product-img-fit {
-    width: 90%;
-    margin-top: 8px;
-    border-radius: 5px 5px 0px 0px;
-}
+
 .img-fit {
     max-height: 100%;
     width: 100%;
@@ -1712,8 +1708,13 @@ hr {
     flex: 0 0 16.666667%;
     max-width: 16.666667%;
 }
+
 /* sm */
 @media (min-width: 576px) {
+    .slick-list.draggable {
+        background-color: #f1f1f1 !important;
+        display: none !important;
+    }
     .border-sm {
         border: 1px solid #e2e5ec !important;
     }
@@ -8388,8 +8389,8 @@ div.footable-loader > span.fooicon:after {
     width: calc(100% + 20px);
 }
 .aiz-carousel.gutters-10 .carousel-box {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 .aiz-carousel.gutters-15 {
     width: calc(100% + 30px);
