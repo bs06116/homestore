@@ -38,15 +38,15 @@
                                 <div class="p-md-3 p-2 text-left">
                                     <div class="fs-15">
                                         @if(home_base_price($product->id) != home_discounted_base_price($product->id))
-                                            <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del>
+                                            <!-- <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del> -->
                                         @endif
                                         <span class="fw-700 text-primary">{{ home_discounted_base_price($product->id) }}</span>
                                     </div>
-                                    <div class="rating rating-sm mt-1">
+                                    <!-- <div class="rating rating-sm mt-1">
                                         {{ renderStarRating($product->rating) }}
-                                    </div>
-                                    <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-                                        <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{  $product->getTranslation('name')  }}</a>
+                                    </div> -->
+                                    <h3 class="fw-600 fs-12 text-truncate-2 lh-1-4 mb-0 h-35px">
+                                        <a href="{{ route('product', $product->slug) }}" class="d-sm-inline text-reset text-truncate">{{  $product->getTranslation('name')  }}</a>
                                     </h3>
 
                                     @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated)

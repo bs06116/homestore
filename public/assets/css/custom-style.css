@@ -59,11 +59,16 @@
     margin-top: 8px;
     border-radius: 5px 5px 0px 0px;
     border-color: gray;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 .bg-change {
     background-color: #fff;
 }
+
 @media screen and (max-width: 480px) {
     .slick-list.draggable {
         background-color: #f1f1f1 !important;
@@ -72,4 +77,21 @@
         background-color: #fff;
         color: black;
     }
+    .fit-products-img {
+        padding-left: 0px !important;
+    padding-right: 0px !important;
+    }
+    .carousel-box-1{
+        background-color: #fff !important;
+    }
+    .aiz-card-box{
+        width: 95% !important;
+    }
+    .aiz-card-box1{
+        width: 100% !important;
+    }
+   .navbar-nav{
+       text-align: left !important;
+   }
+   
 }

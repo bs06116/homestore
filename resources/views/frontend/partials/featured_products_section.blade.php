@@ -41,9 +41,9 @@
                                 @endif
                                 <span class="fw-700 text-primary">{{ home_discounted_base_price($product->id) }}</span>
                             </div>
-                            <div class="rating rating-sm mt-1">
+                            <!-- <div class="rating rating-sm mt-1">
                                 {{ renderStarRating($product->rating) }}
-                            </div>
+                            </div> -->
                             <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
                                 <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{  $product->getTranslation('name')  }}</a>
                             </h3>
@@ -73,10 +73,10 @@
             </div>
             <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="7" data-xl-items="6" data-lg-items="5"  data-md-items="4" data-sm-items="3" data-xs-items="3" data-arrows='false' data-dots="true" data-infinite='false'>
                 @foreach (filter_products(\App\Product::where('published', 1)->where('featured', '1'))->limit(12)->get() as $key => $product)
-                <div class="carousel-box">
-                    <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition .bg-change">
-                        <div class="position-relative">
-                            <a href="{{ route('product', $product->slug) }}" class="d-block">
+                <div class="carousel-box ">
+                    <div class="aiz-card-box border border-light rounded hov-shadow-md my-2  has-transition .bg-change carousel-box-1">
+                        <div class="position-relative ">
+                            <a href="{{ route('product', $product->slug) }}" class="d-block rounded-top">
                                 <img
                                      class="img-fit lazyload mx-auto h-120px h-md-150px fit-products-img"
                                      
@@ -98,18 +98,18 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="p-md-3 p-2 text-left">
+                        <div class="p-md-3 p-2 text-left featured">
                             <div class="fs-15">
                                 @if(home_base_price($product->id) != home_discounted_base_price($product->id))
-                                    <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del>
+                                    <!-- <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del> -->
                                 @endif
                                 <span class="fw-700 text-primary">{{ home_discounted_base_price($product->id) }}</span>
                             </div>
-                            <div class="rating rating-sm mt-1">
+                            <!-- <div class="rating rating-sm mt-1">
                                 {{ renderStarRating($product->rating) }}
-                            </div>
-                            <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-                                <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{  $product->getTranslation('name')  }}</a>
+                            </div> -->
+                            <h3 class="fw-600 fs-12 text-truncate-2 lh-1-4 mb-0 h-35px">
+                                <a href="{{ route('product', $product->slug) }}" class="d-sm-inline text-reset text-truncate">{{  $product->getTranslation('name')  }}</a>
                             </h3>
 
                             @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated)

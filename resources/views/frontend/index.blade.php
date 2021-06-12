@@ -423,7 +423,7 @@
 
                     @foreach (filter_products(\App\Product::where('published', 1))->orderBy('created_at','DESC')->limit(6)->get() as $key => $product)
                     <div class="col mb-3">
-                        <div class="aiz-card-box h-100 border border-light rounded shadow-sm hov-shadow-md has-transition bg-white">
+                        <div class="aiz-card-box1 aiz-card-box h-100 border border-light rounded shadow-sm hov-shadow-md has-transition bg-white">
                             <div class="position-relative text-center">
                                 <a href="{{ route('product', $product->slug) }}" class="d-block">
                                     <img
@@ -450,13 +450,13 @@
                             <div class="p-md-3 p-2 text-left">
                                 <div class="fs-15">
                                     @if(home_base_price($product->id) != home_discounted_base_price($product->id))
-                                        <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del>
+                                        <!-- <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del> -->
                                     @endif
                                     <span class="fw-700 text-primary">{{ home_discounted_base_price($product->id) }}</span>
                                 </div>
-                                <div class="rating rating-sm mt-1">
+                                <!-- <div class="rating rating-sm mt-1">
                                     {{ renderStarRating($product->rating) }}
-                                </div>
+                                </div> -->
                                 <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0">
                                     <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{ $product->getTranslation('name') }}</a>
                                 </h3>
