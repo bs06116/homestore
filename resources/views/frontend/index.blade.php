@@ -3,7 +3,7 @@
 @section('content')
     {{-- Categories , Sliders . Today's deal --}}
     <div class="home-banner-area mb-4 pt-3">
-        <div class="container">
+        <div class="container px-0">
             <div class="row gutters-10 position-relative">
                 <div class="col-lg-3 position-static d-none d-lg-block">
                     @include('frontend.partials.category_menu')
