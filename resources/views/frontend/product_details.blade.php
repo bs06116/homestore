@@ -39,7 +39,7 @@
         <div class="container p-0">
             <div class=" shadow-sm rounded pl-3 pr-3 pb-3">
                 <div class="row">
-                    <!-- <div class="col-xl-5 col-lg-6 mb-4 p-0">
+                    <div class="col-xl-5 col-lg-6 mb-4 p-0">
                         <div class="sticky-top z-3 row gutters-10">
                             @php
                                 $photos = explode(',', $detailedProduct->photos);
@@ -100,7 +100,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     <div class="col-xl-7 col-lg-6">
                         <div class="text-left pt-3">
