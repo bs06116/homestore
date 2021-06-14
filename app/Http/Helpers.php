@@ -285,7 +285,7 @@ if (! function_exists('convert_price')) {
 
         $price = floatval($price) * floatval($currency->exchange_rate);
 
-        return $price;
+        return ceil($price);
     }
 }
 
@@ -293,17 +293,18 @@ if (! function_exists('convert_price')) {
 if (! function_exists('format_price')) {
     function format_price($price)
     {
-        if (get_setting('decimal_separator') == 1) {
-            $fomated_price = number_format($price, BusinessSetting::where('type', 'no_of_decimals')->first()->value);
-        }
-        else {
-            $fomated_price = number_format($price, BusinessSetting::where('type', 'no_of_decimals')->first()->value , ',' , ' ');
-        }
+        // if (get_setting('decimal_separator') == 1) {
+        //     $fomated_price = number_format($price, BusinessSetting::where('type', 'no_of_decimals')->first()->value);
+        // }
+        // else {
+        //     $fomated_price = number_format($price, BusinessSetting::where('type', 'no_of_decimals')->first()->value , ',' , ' ');
+        // }
 
+        $fomated_price = number_format($price, 0 , ',' , ' ');
         if(BusinessSetting::where('type', 'symbol_format')->first()->value == 1){
-            return currency_symbol().$fomated_price;
+            return currency_symbol().' '.$fomated_price;
         }
-        return $fomated_price.currency_symbol();
+        return $fomated_price.' '.currency_symbol();
     }
 }
 
