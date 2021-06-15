@@ -93,5 +93,7 @@
    .navbar-nav{
        text-align: left !important;
    }
-   
+   .mobile-thumnail{
+    display: none;
+   }
 }
