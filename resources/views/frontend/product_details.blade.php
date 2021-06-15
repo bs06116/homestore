@@ -45,9 +45,9 @@
                                 $photos = explode(',', $detailedProduct->photos);
                             @endphp
                             <div class="col order-1 order-md-3 ">
-                                <div class="aiz-carousel product-gallery" data-nav-for='.product-gallery-thumb' data-fade='true' data-auto-height='true'>
+                                <div class="aiz-carousel product-gallery" data-fade="false" data-items="1" data-xl-items="1" data-lg-items="1"  data-md-items="1" data-sm-items="1" data-xs-items="1" data-nav-for='.product-gallery-thumb'  data-auto-height='true'>
                                     @foreach ($photos as $key => $photo)
-                                        <div class="carousel-box img-zoom rounded "  onclick="largeImage('{{ uploaded_asset($photo) }}')">
+                                        <div class="carousel-box  rounded "  onclick="largeImage('{{ uploaded_asset($photo) }}')">
                                             <img
 
                                                 class="img-fluid lazyload"
@@ -57,7 +57,7 @@
                                             >
                                         </div>
                                     @endforeach
-                                    @foreach ($detailedProduct->stocks as $key => $stock)
+                                    {{-- @foreach ($detailedProduct->stocks as $key => $stock)
                                         @if ($stock->image != null)
                                             <div class="carousel-box img-zoom rounded">
                                                 <img
@@ -69,11 +69,11 @@
                                                 >
                                             </div>
                                         @endif
-                                    @endforeach
+                                    @endforeach --}}
                                 </div>
                             </div>
 
-                            {{-- <div class="col-12 col-md-auto w-md-80px order-2 order-md-1 mt-3 mt-md-0">
+                             <div class="col-12 col-md-auto w-md-80px order-2 order-md-1 mt-3 mt-md-0 mobile-thumnail">
                                 <div class="aiz-carousel product-gallery-thumb" data-items='5' data-nav-for='.product-gallery' data-vertical='true' data-vertical-sm='false' data-focus-select='true' data-arrows='true'>
                                     @foreach ($photos as $key => $photo)
                                     <div class="carousel-box c-pointer border p-1 rounded">
@@ -98,7 +98,7 @@
                                         @endif
                                     @endforeach
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                             
@@ -990,7 +990,7 @@
         function largeImage(img){
              modal.style.display = "block";
              modalImg.src = img;
-             captionText.innerHTML = 'text';
+            // captionText.innerHTML = 'text';
         }
         var span = document.getElementsByClassName("close1")[0];
         // When the user clicks on <span> (x), close the modal
@@ -1017,4 +1017,5 @@
 // });
 
     </script>
+
 @endsection

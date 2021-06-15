@@ -93,9 +93,15 @@
    .navbar-nav{
        text-align: left !important;
    }
+<<<<<<< HEAD
    .text-truncate{
        width: 68px !important;
        position: absolute;
    }
    
+=======
+   .mobile-thumnail{
+    display: none;
+   }
+>>>>>>> 5f099801e20efc7b7d91d7e8501391b90f67664f
 }
