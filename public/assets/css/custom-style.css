@@ -93,5 +93,9 @@
    .navbar-nav{
        text-align: left !important;
    }
+   .text-truncate{
+       width: 68px !important;
+       position: absolute;
+   }
    
 }
