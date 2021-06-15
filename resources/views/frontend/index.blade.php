@@ -418,6 +418,9 @@
                     <h3 class="h5 fw-700 mb-0">
                         <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">{{ translate('All Products') }}</span>
                     </h3>
+                    {{-- <div><a href="" style="float:right; " class="text-primary">{{__('View All')}}</a></div> --}}
+                    <a href="{{route('search')}}" style="float:right; " class="ml-auto mr-0 text-primary">{{__('View All')}}</a>
+
                 </div>
                 <div class="row gutters-5 row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-2" id="load-data">
 
@@ -428,7 +431,7 @@
                                 <a href="{{ route('product', $product->slug) }}" class="d-block">
                                     <img
                                         class="img-fit lazyload mx-auto h-120px h-md-150px fit-products-img"
-                                        
+
                                         src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                         data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                         alt="{{  $product->getTranslation('name')  }}"

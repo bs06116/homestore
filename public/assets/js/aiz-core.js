@@ -1292,6 +1292,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                         },
                     ],
                 });
+
             });
         },
         chart: function (selector, config) {

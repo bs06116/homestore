@@ -73,7 +73,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-auto w-md-80px order-2 order-md-1 mt-3 mt-md-0">
+                            {{-- <div class="col-12 col-md-auto w-md-80px order-2 order-md-1 mt-3 mt-md-0">
                                 <div class="aiz-carousel product-gallery-thumb" data-items='5' data-nav-for='.product-gallery' data-vertical='true' data-vertical-sm='false' data-focus-select='true' data-arrows='true'>
                                     @foreach ($photos as $key => $photo)
                                     <div class="carousel-box c-pointer border p-1 rounded">
@@ -98,7 +98,7 @@
                                         @endif
                                     @endforeach
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
@@ -712,7 +712,7 @@
                             </h3>
                         </div>
                         <div class="p-3">
-                            <div class="aiz-carousel gutters-5 half-outside-arrow" data-items="5" data-xl-items="3" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='true'>
+                            <div class="aiz-carousel gutters-5 half-outside-arrow" asNavFor=".stack-list-modal-slider" data-items="5" data-xl-items="3" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='true'>
                                 @foreach (filter_products(\App\Product::where('category_id', $detailedProduct->category_id)->where('id', '!=', $detailedProduct->id))->limit(10)->get() as $key => $related_product)
                                 <div class="carousel-box">
                                     <div class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition">
@@ -946,6 +946,16 @@
 
 
         };
+//         $('#myModal').on('shown.bs.modal', function () {
+//             alert("adfasdf");
+//   $('.aiz-carousel').slick({
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay: false,
+//     arrows: true,
+//     asNavFor: ".stack-list-slider",
+//   });
+// });
 
     </script>
 @endsection
