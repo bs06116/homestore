@@ -529,7 +529,11 @@
                                                 {{ renderStarRating($top_product->rating) }}
                                             </div>
                                             <div class="mt-2">
+                                                @if (Auth::check())
                                                 <span class="fs-17 fw-600 text-primary">{{ home_discounted_base_price($top_product->id) }}</span>
+                                                @else
+                                                <span>Please <strong><a class="registrationLink" style="color: #000000" href="{{ route('user.login') }}" >login</a></strong> to see prices</span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -729,10 +733,14 @@
                                         </div>
                                         <div class="p-md-3 p-2 text-left">
                                             <div class="fs-15">
+                                                @if (Auth::check())
                                                 @if(home_base_price($related_product->id) != home_discounted_base_price($related_product->id))
                                                     <del class="fw-600 opacity-50 mr-1">{{ home_base_price($related_product->id) }}</del>
                                                 @endif
                                                 <span class="fw-700 text-primary">{{ home_discounted_base_price($related_product->id) }}</span>
+                                                @else
+                                                <span>Please <strong><a class="registrationLink" style="color: #000000" href="{{ route('user.login') }}" >login</a></strong> to see prices</span>
+                                                @endif
                                             </div>
                                             <div class="rating rating-sm mt-1">
                                                 {{ renderStarRating($related_product->rating) }}
