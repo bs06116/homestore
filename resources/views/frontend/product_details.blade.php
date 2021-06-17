@@ -102,74 +102,70 @@
                         </div>
                     </div>
 
-
                     <div class="col-xl-7 col-lg-6">
                         <div class="text-left pt-3">
                         <!-- price -->
                         <div>
+                            @if (Auth::check())
                         @if(home_price($detailedProduct->id) != home_discounted_price($detailedProduct->id))
 
-<div class="row no-gutters mt-3">
-    <div class="col-sm-2 mt-1">
-        <div class="opacity-50 ">{{ translate('Price')}}:</div>
-    </div>
+                        <div class="row no-gutters mt-3">
+                            <div class="col-sm-2 mt-1">
+                                <div class="opacity-50 ">{{ translate('Price')}}:</div>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="fs-20 opacity-60">
+                                    <del>
+                                        {{ home_price($detailedProduct->id) }}
+                                        @if($detailedProduct->unit != null)
+                                            <span>/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                        @endif
 
-    <div class="col-sm-10">
-        <div class="fs-20 opacity-60">
-            @if (Auth::check())
-            <del>
+                                    </del>
 
-                {{ home_price($detailedProduct->id) }}
-                @if($detailedProduct->unit != null)
-                    <span>/{{ $detailedProduct->getTranslation('unit') }}</span>
-                @endif
+                                </div>
+                            </div>
+                        </div>
 
-            </del>
-            @else
-            <span>Please <strong><a class="registrationLink" style="color: #000000" href="{{ route('user.login') }}" >login</a></strong> to see prices</span>
-            @endif
-        </div>
-    </div>
-</div>
-@if (Auth::check())
-<div class="row no-gutters my-2">
+                    <div class="row no-gutters my-2">
 
-    <div class="col-sm-2">
-        <div class="opacity-50 mt-2">{{ translate('Discount Price')}}:</div>
-    </div>
+                        <div class="col-sm-2">
+                            <div class="opacity-50 mt-2">{{ translate('Discount Price')}}:</div>
+                        </div>
 
-    <div class="col-sm-10">
-        <div class="">
+                        <div class="col-sm-10">
+                            <div class="">
+                                <strong class="h2 fw-600 text-primary">
+                                    {{ home_discounted_price($detailedProduct->id) }}
+                                </strong>
+                                @if($detailedProduct->unit != null)
+                                    <span class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                @endif
 
-            <strong class="h2 fw-600 text-primary">
-                {{ home_discounted_price($detailedProduct->id) }}
-            </strong>
-            @if($detailedProduct->unit != null)
-                <span class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
-            @endif
+                            </div>
+                        </div>
 
-        </div>
-    </div>
-
-</div>
-@endif
-@else
-<div class="row no-gutters mt-3">
-    <div class="col-sm-2">
-        <div class="opacity-50 my-2">{{ translate('Price')}}:</div>
-    </div>
-    <div class="col-sm-10">
-        <div class="">
-            <strong class="h2 fw-600 text-primary">
-                {{ home_discounted_price($detailedProduct->id) }}
-            </strong>
-            @if($detailedProduct->unit != null)
-                <span class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
-            @endif
-        </div>
-    </div>
-</div>
-@endif
+                    </div>
+                    @else
+                    <div class="row no-gutters mt-3">
+                        <div class="col-sm-2">
+                            <div class="opacity-50 my-2">{{ translate('Price')}}:</div>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="">
+                                <strong class="h2 fw-600 text-primary">
+                                    {{ home_discounted_price($detailedProduct->id) }}
+                                </strong>
+                                @if($detailedProduct->unit != null)
+                                    <span class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @else
+                    <span>Please <strong><a class="registrationLink" style="color: #000000" href="{{ route('user.login') }}" >login</a></strong> to see prices</span>
+                    @endif
                         </div>
                         <hr>
                         <!-- price end -->
