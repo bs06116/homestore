@@ -1,6 +1,6 @@
 <section class="mb-4">
     <div class="container">
-        <div class="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+        <div class="px-2 py-3 px-md-4 py-md-3 bg-white shadow-sm rounded">
             <div class="d-flex mb-3 align-items-baseline border-bottom">
                 <h3 class="h5 fw-700 mb-0">
                     <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">{{ translate('New Arrivals') }}</span>
@@ -66,7 +66,7 @@
 
 <section class="mb-4">
     <div class="container">
-        <div class="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+        <div class="px-2 py-2 px-md-4 py-md-3 bg-white shadow-sm rounded">
             <div class="d-flex mb-3 align-items-baseline border-bottom">
                 <h3 class="h5 fw-700 mb-0">
                     <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">{{ translate('Featured Products') }}</span>
@@ -77,7 +77,7 @@
             <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="7" data-xl-items="6" data-lg-items="5"  data-md-items="4" data-sm-items="3" data-xs-items="3" data-arrows='false' data-dots="true" data-infinite='false'>
                 @foreach (filter_products(\App\Product::where('published', 1)->where('featured', '1'))->limit(12)->get() as $key => $product)
                 <div class="carousel-box ">
-                    <div class="aiz-card-box border border-light rounded hov-shadow-md my-2  has-transition .bg-change carousel-box-1">
+                    <div class="aiz-card-box border border-light rounded hov-shadow-md my-1  has-transition .bg-change carousel-box-1">
                         <div class="position-relative ">
                             <a href="{{ route('product', $product->slug) }}" class="d-block rounded-top">
                                 <img
@@ -111,7 +111,7 @@
                             <!-- <div class="rating rating-sm mt-1">
                                 {{ renderStarRating($product->rating) }}
                             </div> -->
-                            <h3 class="fw-600 fs-12 text-truncate-2 lh-1-4 mb-0 h-35px">
+                            <h3 class="fw-600 fs-12 text-truncate-2 lh-1-4 mb-0 h-25px">
                                 <a href="{{ route('product', $product->slug) }}" class="d-sm-inline text-reset text-truncate">{{  $product->getTranslation('name')  }}</a>
                             </h3>
 

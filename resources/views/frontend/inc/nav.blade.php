@@ -85,9 +85,10 @@
     </div>
 </div>
 <!-- END Top Bar -->
-<header class="@if(get_setting('header_stikcy') == 'on') sticky-top @endif z-1020 bg-white border-bottom shadow-sm">
+<header class="@if(get_setting('header_stikcy') == 'on') sticky-top @endif  bg-white border-bottom shadow-sm">
     <div class="position-relative logo-bar-area z-1">
         <div class="container">
+           
             <div class="d-flex align-items-center">
 
                 <div class="col-auto col-xl-3 pl-0 pr-3 d-flex align-items-center">
@@ -112,8 +113,8 @@
                         </div>
                     @endif
                 </div>
-                <div class="d-lg-none ml-auto mr-0">
-                    <a class="p-2 d-block text-reset" href="javascript:void(0);" data-toggle="class-toggle" data-target=".front-header-search">
+                <div class="d-lg-none ml-auto ">
+                    <a class=" d-block text-reset" href="javascript:void(0);" data-toggle="class-toggle" data-target=".front-header-search">
                         <i class="las la-search la-flip-horizontal la-2x"></i>
                     </a>
                 </div>
@@ -204,7 +205,7 @@
                 </ul>
             </div>
         </div> -->
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light nav1">
         <a class="navbar-brand" href="#"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -212,7 +213,7 @@
 
   <div class="bg-white border-top border-gray-200 py-1 collapse navbar-collapse" id="navbarSupportedContent">
             <div class="container">
-                <ul class="list-inline mb-0 pl-0 mobile-hor-swipe text-center navbar-nav m-lg-auto">
+                <ul class="list-inline mb-0 pl-0 mobile-hor-swipe text-center navbar-nav m-lg-auto m-sm-auto">
                     @foreach (json_decode( get_setting('header_menu_labels'), true) as $key => $value)
                     <li class="list-inline-item mr-0">
                         <a href="{{ json_decode( get_setting('header_menu_links'), true)[$key] }}" class="opacity-60 fs-14 px-3 py-2 d-inline-block fw-600 hov-opacity-100 text-reset">

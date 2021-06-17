@@ -85,7 +85,7 @@
         background-color: #fff !important;
     }
     .aiz-card-box{
-        width: 95% !important;
+        width: 100% !important;
     }
     .aiz-card-box1{
         width: 100% !important;
@@ -93,15 +93,15 @@
    .navbar-nav{
        text-align: left !important;
    }
-<<<<<<< HEAD
    .text-truncate{
        width: 68px !important;
        position: absolute;
    }
+   /* .nav1{
+       position: absolute !important;
+       bottom: 19% !important;
+       z-index: 1;
+       left: 77%;
+   } */
    
-=======
-   .mobile-thumnail{
-    display: none;
-   }
->>>>>>> 5f099801e20efc7b7d91d7e8501391b90f67664f
 }
