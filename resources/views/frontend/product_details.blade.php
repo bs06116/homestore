@@ -101,62 +101,71 @@
                             </div>
                         </div>
                     </div>
-                            
-                
+
                     <div class="col-xl-7 col-lg-6">
                         <div class="text-left pt-3">
                         <!-- price -->
                         <div>
+                            @if (Auth::check())
                         @if(home_price($detailedProduct->id) != home_discounted_price($detailedProduct->id))
 
-<div class="row no-gutters mt-3">
-    <div class="col-sm-2 mt-1">
-        <div class="opacity-50 ">{{ translate('Price')}}:</div>
-    </div>
-    <div class="col-sm-10">
-        <div class="fs-20 opacity-60">
-            <del>
-                {{ home_price($detailedProduct->id) }}
-                @if($detailedProduct->unit != null)
-                    <span>/{{ $detailedProduct->getTranslation('unit') }}</span>
-                @endif
-            </del>
-        </div>
-    </div>
-</div>
+                        <div class="row no-gutters mt-3">
+                            <div class="col-sm-2 mt-1">
+                                <div class="opacity-50 ">{{ translate('Price')}}:</div>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="fs-20 opacity-60">
+                                    <del>
+                                        {{ home_price($detailedProduct->id) }}
+                                        @if($detailedProduct->unit != null)
+                                            <span>/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                        @endif
 
-<div class="row no-gutters my-2">
-    <div class="col-sm-2">
-        <div class="opacity-50 mt-2">{{ translate('Discount Price')}}:</div>
-    </div>
-    <div class="col-sm-10">
-        <div class="">
-            <strong class="h2 fw-600 text-primary">
-                {{ home_discounted_price($detailedProduct->id) }}
-            </strong>
-            @if($detailedProduct->unit != null)
-                <span class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
-            @endif
-        </div>
-    </div>
-</div>
-@else
-<div class="row no-gutters mt-3">
-    <div class="col-sm-2">
-        <div class="opacity-50 my-2">{{ translate('Price')}}:</div>
-    </div>
-    <div class="col-sm-10">
-        <div class="">
-            <strong class="h2 fw-600 text-primary">
-                {{ home_discounted_price($detailedProduct->id) }}
-            </strong>
-            @if($detailedProduct->unit != null)
-                <span class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
-            @endif
-        </div>
-    </div>
-</div>
-@endif
+                                    </del>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="row no-gutters my-2">
+
+                        <div class="col-sm-2">
+                            <div class="opacity-50 mt-2">{{ translate('Discount Price')}}:</div>
+                        </div>
+
+                        <div class="col-sm-10">
+                            <div class="">
+                                <strong class="h2 fw-600 text-primary">
+                                    {{ home_discounted_price($detailedProduct->id) }}
+                                </strong>
+                                @if($detailedProduct->unit != null)
+                                    <span class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                @endif
+
+                            </div>
+                        </div>
+
+                    </div>
+                    @else
+                    <div class="row no-gutters mt-3">
+                        <div class="col-sm-2">
+                            <div class="opacity-50 my-2">{{ translate('Price')}}:</div>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="">
+                                <strong class="h2 fw-600 text-primary">
+                                    {{ home_discounted_price($detailedProduct->id) }}
+                                </strong>
+                                @if($detailedProduct->unit != null)
+                                    <span class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @else
+                    <span>Please <strong><a class="registrationLink" style="color: #000000" href="{{ route('user.login') }}" >login</a></strong> to see prices</span>
+                    @endif
                         </div>
                         <hr>
                         <!-- price end -->
@@ -165,7 +174,7 @@
                                 {{ $detailedProduct->getTranslation('name') }}
                             </h1>
                         </div>
-                           
+
 
                             <div class="row align-items-center">
                                 <div class="col-6">
@@ -378,19 +387,22 @@
                                 </div>
 
                                 <hr>
-
+                                @if (Auth::check())
                                 <div class="row no-gutters pb-3 d-none" id="chosen_price_div">
                                     <div class="col-sm-2">
                                         <div class="opacity-50 my-2">{{ translate('Total Price')}}:</div>
                                     </div>
                                     <div class="col-sm-10">
                                         <div class="product-price">
+
                                             <strong id="chosen_price" class="h4 fw-600 text-primary">
 
                                             </strong>
+
                                         </div>
                                     </div>
                                 </div>
+                                @endif
 
                             </form>
 
@@ -588,7 +600,11 @@
                                                 {{ renderStarRating($top_product->rating) }}
                                             </div>
                                             <div class="mt-2">
+                                                @if (Auth::check())
                                                 <span class="fs-17 fw-600 text-primary">{{ home_discounted_base_price($top_product->id) }}</span>
+                                                @else
+                                                <span>Please <strong><a class="registrationLink" style="color: #000000" href="{{ route('user.login') }}" >login</a></strong> to see prices</span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -788,10 +804,14 @@
                                         </div>
                                         <div class="p-md-3 p-2 text-left">
                                             <div class="fs-15">
+                                                @if (Auth::check())
                                                 @if(home_base_price($related_product->id) != home_discounted_base_price($related_product->id))
                                                     <del class="fw-600 opacity-50 mr-1">{{ home_base_price($related_product->id) }}</del>
                                                 @endif
                                                 <span class="fw-700 text-primary">{{ home_discounted_base_price($related_product->id) }}</span>
+                                                @else
+                                                <span>Please <strong><a class="registrationLink" style="color: #000000" href="{{ route('user.login') }}" >login</a></strong> to see prices</span>
+                                                @endif
                                             </div>
                                             <div class="rating rating-sm mt-1">
                                                 {{ renderStarRating($related_product->rating) }}

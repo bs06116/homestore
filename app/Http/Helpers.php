@@ -300,7 +300,7 @@ if (! function_exists('format_price')) {
         //     $fomated_price = number_format($price, BusinessSetting::where('type', 'no_of_decimals')->first()->value , ',' , ' ');
         // }
 
-        $fomated_price = number_format($price, 0 , ',' , ' ');
+        $fomated_price = number_format($price, 0 , ',' , '');
         if(BusinessSetting::where('type', 'symbol_format')->first()->value == 1){
             return currency_symbol().' '.$fomated_price;
         }
