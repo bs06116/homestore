@@ -101,8 +101,8 @@
                             </div>
                         </div>
                     </div>
-                            
-                
+
+
                     <div class="col-xl-7 col-lg-6">
                         <div class="text-left pt-3">
                         <!-- price -->
@@ -113,33 +113,46 @@
     <div class="col-sm-2 mt-1">
         <div class="opacity-50 ">{{ translate('Price')}}:</div>
     </div>
+
     <div class="col-sm-10">
         <div class="fs-20 opacity-60">
+            @if (Auth::check())
             <del>
+
                 {{ home_price($detailedProduct->id) }}
                 @if($detailedProduct->unit != null)
                     <span>/{{ $detailedProduct->getTranslation('unit') }}</span>
                 @endif
+
             </del>
+            @else
+            <span>Please <strong><a class="registrationLink" style="color: #000000" href="{{ route('user.login') }}" >login</a></strong> to see prices</span>
+            @endif
         </div>
     </div>
 </div>
-
+@if (Auth::check())
 <div class="row no-gutters my-2">
+
     <div class="col-sm-2">
         <div class="opacity-50 mt-2">{{ translate('Discount Price')}}:</div>
     </div>
+
     <div class="col-sm-10">
         <div class="">
+
             <strong class="h2 fw-600 text-primary">
                 {{ home_discounted_price($detailedProduct->id) }}
             </strong>
             @if($detailedProduct->unit != null)
                 <span class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
             @endif
+
         </div>
     </div>
+
 </div>
+@endif
 @else
 <div class="row no-gutters mt-3">
     <div class="col-sm-2">
@@ -165,7 +178,7 @@
                                 {{ $detailedProduct->getTranslation('name') }}
                             </h1>
                         </div>
-                           
+
 
                             <div class="row align-items-center">
                                 <div class="col-6">
@@ -378,19 +391,22 @@
                                 </div>
 
                                 <hr>
-
+                                @if (Auth::check())
                                 <div class="row no-gutters pb-3 d-none" id="chosen_price_div">
                                     <div class="col-sm-2">
                                         <div class="opacity-50 my-2">{{ translate('Total Price')}}:</div>
                                     </div>
                                     <div class="col-sm-10">
                                         <div class="product-price">
+
                                             <strong id="chosen_price" class="h4 fw-600 text-primary">
 
                                             </strong>
+
                                         </div>
                                     </div>
                                 </div>
+                                @endif
 
                             </form>
 
