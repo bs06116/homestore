@@ -101,12 +101,71 @@
                             </div>
                         </div>
                     </div>
-
+                            
+                
                     <div class="col-xl-7 col-lg-6">
                         <div class="text-left pt-3">
-                            <h1 class="mb-2 fs-20 fw-600">
+                        <!-- price -->
+                        <div>
+                        @if(home_price($detailedProduct->id) != home_discounted_price($detailedProduct->id))
+
+<div class="row no-gutters mt-3">
+    <div class="col-sm-2 mt-1">
+        <div class="opacity-50 ">{{ translate('Price')}}:</div>
+    </div>
+    <div class="col-sm-10">
+        <div class="fs-20 opacity-60">
+            <del>
+                {{ home_price($detailedProduct->id) }}
+                @if($detailedProduct->unit != null)
+                    <span>/{{ $detailedProduct->getTranslation('unit') }}</span>
+                @endif
+            </del>
+        </div>
+    </div>
+</div>
+
+<div class="row no-gutters my-2">
+    <div class="col-sm-2">
+        <div class="opacity-50 mt-2">{{ translate('Discount Price')}}:</div>
+    </div>
+    <div class="col-sm-10">
+        <div class="">
+            <strong class="h2 fw-600 text-primary">
+                {{ home_discounted_price($detailedProduct->id) }}
+            </strong>
+            @if($detailedProduct->unit != null)
+                <span class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
+            @endif
+        </div>
+    </div>
+</div>
+@else
+<div class="row no-gutters mt-3">
+    <div class="col-sm-2">
+        <div class="opacity-50 my-2">{{ translate('Price')}}:</div>
+    </div>
+    <div class="col-sm-10">
+        <div class="">
+            <strong class="h2 fw-600 text-primary">
+                {{ home_discounted_price($detailedProduct->id) }}
+            </strong>
+            @if($detailedProduct->unit != null)
+                <span class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
+            @endif
+        </div>
+    </div>
+</div>
+@endif
+                        </div>
+                        <hr>
+                        <!-- price end -->
+                        <div>
+                        <h1 class="mb-2 fs-20 fw-600">
                                 {{ $detailedProduct->getTranslation('name') }}
                             </h1>
+                        </div>
+                           
 
                             <div class="row align-items-center">
                                 <div class="col-6">
@@ -167,7 +226,7 @@
 
                             <hr>
 
-                            @if(home_price($detailedProduct->id) != home_discounted_price($detailedProduct->id))
+                            <!-- @if(home_price($detailedProduct->id) != home_discounted_price($detailedProduct->id))
 
                                 <div class="row no-gutters mt-3">
                                     <div class="col-sm-2">
@@ -216,7 +275,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endif
+                            @endif -->
 
                             @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated && $detailedProduct->earn_point > 0)
                                 <div class="row no-gutters mt-4">
