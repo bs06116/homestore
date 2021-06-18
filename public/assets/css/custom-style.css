@@ -97,11 +97,12 @@
        width: 68px !important;
        position: absolute;
    }
-   /* .nav1{
-       position: absolute !important;
-       bottom: 19% !important;
-       z-index: 1;
-       left: 77%;
-   } */
-   
+   .coustom{
+       display: inline-block !important;
+   }
+   .aiz-card-box{
+       border-radius: 10px !important;
+   }
+ 
 }
+

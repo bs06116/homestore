@@ -92,7 +92,7 @@
             <div class="d-flex align-items-center">
 
                 <div class="col-auto col-xl-3 pl-0 pr-3 d-flex align-items-center">
-                    <a class="d-block py-20px mr-3 ml-0" href="{{ route('home') }}">
+                    <a class="d-block pt-20px mr-3 ml-0" href="{{ route('home') }}">
                         @php
                             $header_logo = get_setting('header_logo');
                         @endphp
@@ -113,10 +113,15 @@
                         </div>
                     @endif
                 </div>
-                <div class="d-lg-none ml-auto ">
-                    <a class=" d-block text-reset" href="javascript:void(0);" data-toggle="class-toggle" data-target=".front-header-search">
-                        <i class="las la-search la-flip-horizontal la-2x"></i>
+                <div class="d-lg-none ml-auto pt-2">
+                    <a class="  text-reset" href="javascript:void(0);" data-toggle="class-toggle" data-target=".front-header-search">
+                        <i class="las la-search la-flip-horizontal la-2x pt-2"></i>
                     </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+</svg></span>
+                            </button>
                 </div>
 
                 <div class="flex-grow-1 front-header-search d-flex align-items-center bg-white">
@@ -207,9 +212,7 @@
         </div> -->
         <nav class="navbar navbar-expand-lg navbar-light nav1">
         <a class="navbar-brand" href="#"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  
 
   <div class="bg-white border-top border-gray-200 py-1 collapse navbar-collapse" id="navbarSupportedContent">
             <div class="container">

@@ -4069,7 +4069,7 @@ input[type="submit"].btn-block {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
+    /* padding: 0.5rem 1rem; */
 }
 .navbar .container,
 .navbar .container-fluid,
@@ -4131,7 +4131,7 @@ input[type="submit"].btn-block {
 }
 .navbar-toggler {
     padding: 0.25rem 0.75rem;
-    font-size: 1rem !important;
+    font-size: 1.25rem !important;
     line-height: 1;
     background-color: transparent;
     border: 1px solid transparent;
@@ -7539,7 +7539,7 @@ button.bg-dark:hover {
 }
 .mb-1,
 .my-1 {
-    margin-bottom: 0.25rem !important;
+    /* margin-bottom: 0.25rem !important; */
 }
 .ml-1,
 .mx-1 {

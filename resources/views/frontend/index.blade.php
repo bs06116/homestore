@@ -433,12 +433,12 @@
                 <div class="row gutters-5 row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-2" id="load-data">
 
                     @foreach (filter_products(\App\Product::where('published', 1))->orderBy('created_at','DESC')->limit(6)->get() as $key => $product)
-                    <div class="col mb-3">
+                    <div class="col mb-2">
                         <div class="aiz-card-box1 aiz-card-box h-100 border border-light rounded shadow-sm hov-shadow-md has-transition bg-white">
                             <div class="position-relative text-center">
                                 <a href="{{ route('product', $product->slug) }}" class="d-block">
                                     <img
-                                        class="img-fit lazyload mx-auto h-120px h-md-150px fit-products-img"
+                                        class="img-fit lazyload mx-auto h-167px h-md-150px fit-products-img"
 
                                         src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                         data-src="{{ uploaded_asset($product->thumbnail_img) }}"
@@ -469,10 +469,11 @@
                                     <span>Please <strong><a class="registrationLink" style="color: #000000" href="{{ route('user.login') }}" >login</a></strong> to see prices</span>
                                     @endif
                                 </div>
+                               
                                 <!-- <div class="rating rating-sm mt-1">
                                     {{ renderStarRating($product->rating) }}
                                 </div> -->
-                                <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0">
+                                <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-2">
                                     <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{ $product->getTranslation('name') }}</a>
                                 </h3>
 
