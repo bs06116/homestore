@@ -362,7 +362,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="pt-3">
+                    <!-- <div class="pt-3">
                         <label class="aiz-checkbox">
                             <input type="checkbox" required id="agree_checkbox">
                             <span class="aiz-square-check"></span>
@@ -371,9 +371,9 @@
                         <a href="{{ route('terms') }}">{{ translate('terms and conditions')}}</a>,
                         <a href="{{ route('returnpolicy') }}">{{ translate('return policy')}}</a> &
                         <a href="{{ route('privacypolicy') }}">{{ translate('privacy policy')}}</a>
-                    </div>
+                    </div> -->
 
-                    <div class="row align-items-center pt-3">
+                    <!-- <div class="row align-items-center pt-3">
                         <div class="col-6">
                             <a href="{{ route('home') }}" class="link link--style-3">
                                 <i class="las la-arrow-left"></i>
@@ -383,13 +383,36 @@
                         <div class="col-6 text-right">
                             <button type="button" onclick="submitOrder(this)" class="btn btn-primary fw-600">{{ translate('Complete Order')}}</button>
                         </div>
-                    </div>
+                    </div> -->
                 </form>
             </div>
 
             <div class="col-lg-4 mt-4 mt-lg-0" id="cart_summary">
                 @include('frontend.partials.cart_summary')
             </div>
+            <!-- checkbox start here-->
+            <div class="pb-2 pl-3">
+                        <label class="aiz-checkbox">
+                            <input type="checkbox" required id="agree_checkbox">
+                            <span class="aiz-square-check"></span>
+                            <span>{{ translate('I agree to the')}}</span>
+                        </label>
+                        <a href="{{ route('terms') }}">{{ translate('terms and conditions')}}</a>,
+                        <a href="{{ route('returnpolicy') }}">{{ translate('return policy')}}</a> &
+                        <a href="{{ route('privacypolicy') }}">{{ translate('privacy policy')}}</a>
+                    </div>
+            <!-- checkbox end here -->
+            <div class="row  pt-3">
+                        <div class="col-6 pt-3 pl-4">
+                            <a href="{{ route('home') }}" class="link link--style-3">
+                                <i class="las la-arrow-left"></i>
+                                {{ translate('Return to shop')}}
+                            </a>
+                        </div>
+                        <div class="col-6 text-right pl-5 completeorderbtn">
+                            <button type="button" onclick="submitOrder(this)" class="btn btn-primary fw-600">{{ translate('Complete Order')}}</button>
+                        </div>
+                    </div>
         </div>
     </div>
 </section>

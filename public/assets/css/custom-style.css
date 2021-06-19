@@ -103,6 +103,8 @@
    .aiz-card-box{
        border-radius: 10px !important;
    }
- 
+   .completeorderbtn{
+       padding-left: 5rem !important;
+   }
 }
 
