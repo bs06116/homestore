@@ -38,9 +38,9 @@
                         <div class="p-md-3 p-2 text-left">
                             <div class="fs-15">
                                 @if (Auth::check())
-                                @if(home_base_price($product->id) != home_discounted_base_price($product->id))
+                                {{-- @if(home_base_price($product->id) != home_discounted_base_price($product->id))
                                     <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del>
-                                @endif
+                                @endif --}}
                                 <span class="fw-700 text-primary">{{ home_discounted_base_price($product->id) }}</span>
                                 @else
                                 <span>Please <strong><a class="registrationLink" style="color: #000000" href="{{ route('user.login') }}" >login</a></strong> to see prices</span>
