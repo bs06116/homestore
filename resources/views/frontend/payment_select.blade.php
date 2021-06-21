@@ -361,6 +361,7 @@
                                 </div>
                             @endif
                         </div>
+                       
                     </div>
                     <!-- <div class="pt-3">
                         <label class="aiz-checkbox">
@@ -391,7 +392,7 @@
                 @include('frontend.partials.cart_summary')
             </div>
             <!-- checkbox start here-->
-            <div class="pb-2 pl-3">
+            <div class="pb-3 pl-3 aiz-checkbox1">
                         <label class="aiz-checkbox">
                             <input type="checkbox" required id="agree_checkbox">
                             <span class="aiz-square-check"></span>
@@ -401,19 +402,20 @@
                         <a href="{{ route('returnpolicy') }}">{{ translate('return policy')}}</a> &
                         <a href="{{ route('privacypolicy') }}">{{ translate('privacy policy')}}</a>
                     </div>
+                    
             <!-- checkbox end here -->
-            <div class="row  pt-3">
-                        <div class="col-6 pt-3 pl-4">
+        </div>
+        <div class="row mt-3-sm">
+                        <div class="col-5 pt-2">
                             <a href="{{ route('home') }}" class="link link--style-3">
                                 <i class="las la-arrow-left"></i>
                                 {{ translate('Return to shop')}}
                             </a>
                         </div>
-                        <div class="col-6 text-right pl-5 completeorderbtn">
+                        <div class="col-7 compelteorederbtn">
                             <button type="button" onclick="submitOrder(this)" class="btn btn-primary fw-600">{{ translate('Complete Order')}}</button>
                         </div>
                     </div>
-        </div>
     </div>
 </section>
 @endsection

@@ -69,6 +69,7 @@
     background-color: #fff;
 }
 
+
 @media screen and (max-width: 480px) {
     .slick-list.draggable {
         background-color: #f1f1f1 !important;
@@ -88,7 +89,7 @@
         width: 100% !important;
     }
     .aiz-card-box1{
-        width: 100% !important;
+        width: 97% !important;
     }
    .navbar-nav{
        text-align: left !important;
@@ -103,8 +104,11 @@
    .aiz-card-box{
        border-radius: 10px !important;
    }
-   .completeorderbtn{
-       padding-left: 5rem !important;
+   .compelteorederbtn{
+       padding-left: 85px !important;
+   }
+   .mobile-thumnail{
+       display: none !important;
    }
 }
 
