@@ -955,7 +955,7 @@
             </div>
         </div>
     </div>
-    <div id="myModal" class="modal">
+    <div id="myModal" class="modal d-lg-none">
         <span class="close1"><i class="las la-window-close"></i></span>
         <span class="download-btn" onclick="downloadCanvas(this);"><i class="las la-save"></i></span>
         <!-- <img class="modal-content modal-content-img" id="img01"> -->
