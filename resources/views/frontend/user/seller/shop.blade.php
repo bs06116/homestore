@@ -56,7 +56,7 @@
                             <input type="number" lang="en" min="0" class="form-control mb-3" placeholder="{{ translate('Shipping Cost')}}" name="shipping_cost" value="{{ $shop->shipping_cost }}" required>
                         </div>
                     </div>
-                @endif 
+                @endif
                 @if (get_setting('pickup_point') == 1)
                 <div class="row mb-3">
                     <label class="col-md-2 col-form-label">{{ translate('Pickup Points') }}</label>
@@ -127,7 +127,7 @@
     </div>
 
     {{-- Social Media Link --}}
-    <div class="card">
+    {{-- <div class="card">
         <div class="card-header">
             <h5 class="mb-0 h6">{{ translate('Social Media Link') }}</h5>
         </div>
@@ -170,6 +170,6 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> --}}
 
 @endsection
