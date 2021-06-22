@@ -21,7 +21,7 @@
 .modal-content-img {
     margin: auto;
     display: block;
-    width: 90%;
+    width: 100%;
     max-width: 700px;
     min-height: 450px;
     max-height: 500px;

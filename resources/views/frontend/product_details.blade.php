@@ -958,7 +958,35 @@
     <div id="myModal" class="modal">
         <span class="close1"><i class="las la-window-close"></i></span>
         <span class="download-btn" onclick="downloadCanvas(this);"><i class="las la-save"></i></span>
-        <img class="modal-content modal-content-img" id="img01">
+        <!-- <img class="modal-content modal-content-img" id="img01"> -->
+        <!-- slider start here -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src='http://localhost/homestore/public/assets/img/placeholder.jpg'; class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src='http://localhost/homestore/public/assets/img/placeholder.jpg'; class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src='http://localhost/homestore/public/assets/img/placeholder.jpg'; class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a> -->
+</div>
+        <!-- slider end here -->
    </div>
 @endsection
 
