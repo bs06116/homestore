@@ -78,7 +78,7 @@
                         <th data-breakpoints="md">{{ translate('Category')}}</th>
                         <th data-breakpoints="md">{{ translate('Current Qty')}}</th>
                         <th>{{ translate('Base Price')}}</th>
-                        {{-- <th data-breakpoints="md">{{ translate('Featured')}}</th> --}}
+                        <th data-breakpoints="md">{{ translate('Featured')}}</th>
                         <th data-breakpoints="md" class="text-right">{{ translate('Options')}}</th>
                     </tr>
                 </thead>

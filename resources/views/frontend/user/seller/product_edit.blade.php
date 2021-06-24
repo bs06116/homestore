@@ -20,7 +20,7 @@
             @csrf
             <input type="hidden" name="added_by" value="seller">
             <div class="card">
-                <ul class="nav nav-tabs nav-fill border-light">
+                {{-- <ul class="nav nav-tabs nav-fill border-light">
                     @foreach (\App\Language::all() as $key => $language)
                     <li class="nav-item">
                         <a class="nav-link text-reset @if ($language->code == $lang) active @else bg-soft-dark border-light border-left-0 @endif py-3"
@@ -31,7 +31,7 @@
                         </a>
                     </li>
                     @endforeach
-                </ul>
+                </ul> --}}
                 <div class="card-body">
                     <div class="form-group row">
                         <label class="col-lg-3 col-from-label">{{translate('Product Name')}}</label>
@@ -552,18 +552,18 @@
                     <label class="col-md-6 col-from-label">{{translate('Show Stock Quantity')}}</label>
                     <div class="col-md-6">
                         <label class="aiz-switch aiz-switch-success mb-0">
-                            <input type="radio" name="stock_visibility_state" value="quantity"
+                            <input  type="radio" name="stock_visibility_state" value="quantity"
                                 @if($product->stock_visibility_state == 'quantity') checked @endif>
                             <span></span>
                         </label>
                     </div>
                 </div>
 
-                <div class="form-group row">
+                {{-- <div class="form-group row">
                     <label class="col-md-6 col-from-label">{{translate('Show Stock With Text Only')}}</label>
                     <div class="col-md-6">
                         <label class="aiz-switch aiz-switch-success mb-0">
-                            <input type="radio" name="stock_visibility_state" value="text"
+                            <input   type="radio" name="stock_visibility_state" value="text"
                                 @if($product->stock_visibility_state == 'text') checked @endif>
                             <span></span>
                         </label>
@@ -574,12 +574,12 @@
                     <label class="col-md-6 col-from-label">{{translate('Hide Stock')}}</label>
                     <div class="col-md-6">
                         <label class="aiz-switch aiz-switch-success mb-0">
-                            <input type="radio" name="stock_visibility_state" value="hide"
+                            <input disabled type="radio" name="stock_visibility_state" value="hide"
                                 @if($product->stock_visibility_state == 'hide') checked @endif>
                             <span></span>
                         </label>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>

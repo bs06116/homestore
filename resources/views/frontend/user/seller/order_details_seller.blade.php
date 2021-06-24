@@ -80,6 +80,14 @@
                             <td>{{ $order->code }}</td>
                         </tr>
                         <tr>
+                            <td class="w-50 fw-600">{{ translate('Order date')}}:</td>
+                            <td>{{ date('d-m-Y H:i A', $order->date) }}</td>
+                        </tr>
+                        <tr>
+                            <td class="w-50 fw-600">{{ translate('Order status')}}:</td>
+                            <td>{{ translate($status) }}</td>
+                        </tr>
+                        {{-- <tr>
                             <td class="w-50 fw-600">{{ translate('Customer')}}:</td>
                             <td>{{ json_decode($order->shipping_address)->name }}</td>
                         </tr>
@@ -88,31 +96,24 @@
                             @if ($order->user_id != null)
                                 <td>{{ $order->user->email }}</td>
                             @endif
-                        </tr>
-                        <tr>
+                        </tr> --}}
+                        {{-- <tr>
                             <td class="w-50 fw-600">{{ translate('Shipping address')}}:</td>
                             <td>{{ json_decode($order->shipping_address)->address }}, {{ json_decode($order->shipping_address)->city }}, {{ json_decode($order->shipping_address)->postal_code }}, {{ json_decode($order->shipping_address)->country }}</td>
-                        </tr>
+                        </tr> --}}
                     </table>
                 </div>
                 <div class="col-lg-6">
                     <table class="table table-borderless">
-                        <tr>
-                            <td class="w-50 fw-600">{{ translate('Order date')}}:</td>
-                            <td>{{ date('d-m-Y H:i A', $order->date) }}</td>
-                        </tr>
-                        <tr>
-                            <td class="w-50 fw-600">{{ translate('Order status')}}:</td>
-                            <td>{{ translate($status) }}</td>
-                        </tr>
+
                         <tr>
                             <td class="w-50 fw-600">{{ translate('Total order amount')}}:</td>
                             <td>{{ single_price($order->grand_total) }}</td>
                         </tr>
-                        <tr>
+                        {{-- <tr>
                             <td class="w-50 fw-600">{{ translate('Contact')}}:</td>
                             <td>{{ json_decode($order->shipping_address)->phone }}</td>
-                        </tr>
+                        </tr> --}}
                         <tr>
                             <td class="w-50 fw-600">{{ translate('Payment method')}}:</td>
                             <td>{{ ucfirst(str_replace('_', ' ', $order->payment_type)) }}</td>

@@ -266,7 +266,7 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <div id="show-hide-div">
                         <div class="form-group row">
                             <label class="col-md-3 col-from-label">{{translate('Quantity')}}</label>
@@ -465,13 +465,13 @@
                         <label class="col-md-6 col-from-label">{{translate('Show Stock Quantity')}}</label>
                         <div class="col-md-6">
                             <label class="aiz-switch aiz-switch-success mb-0">
-                                <input type="radio" name="stock_visibility_state" value="quantity" checked>
+                                <input  type="radio" name="stock_visibility_state" value="quantity" checked>
                                 <span></span>
                             </label>
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         <label class="col-md-6 col-from-label">{{translate('Show Stock With Text Only')}}</label>
                         <div class="col-md-6">
                             <label class="aiz-switch aiz-switch-success mb-0">
@@ -489,7 +489,7 @@
                                 <span></span>
                             </label>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>

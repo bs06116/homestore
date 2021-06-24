@@ -41,6 +41,14 @@
                                     <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{  translate('Email') }}" name="email">
                                 </div>
                                 <div class="form-group">
+                                    <label>{{ translate('Your Phone')}} <span class="text-primary">*</span></label>
+                                    <input type="phone" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" value="{{ old('phone') }}" placeholder="{{  translate('Phone') }}" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label>{{ translate('Your City')}} <span class="text-primary">*</span></label>
+                                    <input type="city" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" value="{{ old('city') }}" placeholder="{{  translate('City') }}" name="city">
+                                </div>
+                                <div class="form-group">
                                     <label>{{ translate('Your Password')}} <span class="text-primary">*</span></label>
                                     <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{  translate('Password') }}" name="password">
                                 </div>
