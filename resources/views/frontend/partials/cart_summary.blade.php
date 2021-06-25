@@ -3,7 +3,7 @@
         <h3 class="fs-16 fw-600 mb-0">{{translate('Summary')}}</h3>
         <div class="text-right">
             <span class="badge badge-inline badge-primary">
-                {{ count($carts) }} 
+                {{ count($carts) }}
                 {{translate('Items')}}
             </span>
         </div>
@@ -20,7 +20,7 @@
                     $total_point += $product->earn_point * $cartItem['quantity'];
                 @endphp
             @endforeach
-            
+
             <div class="rounded px-2 mb-2 bg-soft-primary border-soft-primary border">
                 {{ translate("Total Club point") }}:
                 <span class="fw-700 float-right">{{ $total_point }}</span>
@@ -46,15 +46,15 @@
                         $product = \App\Product::find($cartItem['product_id']);
                         $subtotal += $cartItem['price'] * $cartItem['quantity'];
                         $tax += $cartItem['tax'] * $cartItem['quantity'];
-                        
+
                         $product_shipping_cost = $cartItem['shipping_cost'];
-                        
+
                         if($product->is_quantity_multiplied == 1 && get_setting('shipping_type') == 'product_wise_shipping') {
                             $product_shipping_cost = $product_shipping_cost * $cartItem['quantity'];
                         }
-                        
+
                         $shipping += $product_shipping_cost;
-                        
+
                         $product_name_with_choice = $product->getTranslation('name');
                         if ($cartItem['variant'] != null) {
                             $product_name_with_choice = $product->getTranslation('name').' - '.$cartItem['variant'];

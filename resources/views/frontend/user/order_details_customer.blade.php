@@ -50,6 +50,14 @@
                             <td>{{ $order->code }}</td>
                         </tr>
                         <tr>
+                            <td class="w-50 fw-600">{{ translate('Order date')}}:</td>
+                            <td>{{ date('d-m-Y H:i A', $order->date) }}</td>
+                        </tr>
+                        <tr>
+                            <td class="w-50 fw-600">{{ translate('Order status')}}:</td>
+                            <td>{{ translate(ucfirst(str_replace('_', ' ', $status))) }}</td>
+                        </tr>
+                        {{-- <tr>
                             <td class="w-50 fw-600">{{ translate('Customer')}}:</td>
                             <td>{{ json_decode($order->shipping_address)->name }}</td>
                         </tr>
@@ -62,19 +70,12 @@
                         <tr>
                             <td class="w-50 fw-600">{{ translate('Shipping address')}}:</td>
                             <td>{{ json_decode($order->shipping_address)->address }}, {{ json_decode($order->shipping_address)->city }}, {{ json_decode($order->shipping_address)->postal_code }}, {{ json_decode($order->shipping_address)->country }}</td>
-                        </tr>
+                        </tr> --}}
                     </table>
                 </div>
                 <div class="col-lg-6">
                     <table class="table table-borderless">
-                        <tr>
-                            <td class="w-50 fw-600">{{ translate('Order date')}}:</td>
-                            <td>{{ date('d-m-Y H:i A', $order->date) }}</td>
-                        </tr>
-                        <tr>
-                            <td class="w-50 fw-600">{{ translate('Order status')}}:</td>
-                            <td>{{ translate(ucfirst(str_replace('_', ' ', $status))) }}</td>
-                        </tr>
+
                         <tr>
                             <td class="w-50 fw-600">{{ translate('Total order amount')}}:</td>
                             <td>{{ single_price($order->orderDetails->sum('price') + $order->orderDetails->sum('tax')) }}</td>
@@ -147,11 +148,11 @@
                                             $today_date = Carbon\Carbon::now();
                                         @endphp
                                         <td>
-                                            @if ($orderDetail->product != null && 
-                                            $orderDetail->product->refundable != 0 && 
-                                            $orderDetail->refund_request == null && 
-                                            $today_date <= $last_refund_date && 
-                                            $orderDetail->payment_status == 'paid' && 
+                                            @if ($orderDetail->product != null &&
+                                            $orderDetail->product->refundable != 0 &&
+                                            $orderDetail->refund_request == null &&
+                                            $today_date <= $last_refund_date &&
+                                            $orderDetail->payment_status == 'paid' &&
                                             $orderDetail->delivery_status == 'delivered')
                                                 <a href="{{route('refund_request_send_page', $orderDetail->id)}}" class="btn btn-primary btn-sm">{{  translate('Send') }}</a>
                                             @elseif ($orderDetail->refund_request != null && $orderDetail->refund_request->refund_status == 0)

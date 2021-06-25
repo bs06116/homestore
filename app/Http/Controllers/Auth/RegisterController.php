@@ -149,11 +149,11 @@ class RegisterController extends Controller
             if(BusinessSetting::where('type', 'email_verification')->first()->value != 1){
                 $user->email_verified_at = date('Y-m-d H:m:s');
                 $user->save();
-                flash(translate('Registration successfull.'))->success();
+                flash(translate('Thank you for registration, Our representative will contact you shortly to approve your webiste access.'))->success();
             }
             else {
                 event(new Registered($user));
-                flash(translate('Thank you for the registration, our representative will contact you shortly to verify your details and approve your access. In case of any queries, you can reach us at whatsapp 03343912553". Please verify your email.'))->success();
+                flash(translate('Thank you for registration, Our representative will contact you shortly to approve your webiste access.'))->success();
             }
         }
 
@@ -167,7 +167,7 @@ class RegisterController extends Controller
             return redirect()->route('verification');
         }
         else {
-            return redirect()->route('home');
+            return redirect()->route('user.login');
         }
     }
 }

@@ -64,6 +64,8 @@ class ShopController extends Controller
                 $user = new User;
                 $user->name = $request->name;
                 $user->email = $request->email;
+                $user->city = $request->city;
+                $user->phone = $request->phone;
                 $user->user_type = "seller";
                 $user->password = Hash::make($request->password);
                 $user->save();
@@ -94,7 +96,7 @@ class ShopController extends Controller
             $shop->slug = preg_replace('/\s+/', '-', $request->name).'-'.$shop->id;
 
             if($shop->save()){
-                auth()->login($user, false);
+                //auth()->login($user, false);
                 if(BusinessSetting::where('type', 'email_verification')->first()->value != 1){
                     $user->email_verified_at = date('Y-m-d H:m:s');
                     $user->save();
@@ -103,8 +105,8 @@ class ShopController extends Controller
                     $user->notify(new EmailVerificationNotification());
                 }
 
-                flash(translate('Your Shop has been created successfully!'))->success();
-                return redirect()->route('shops.index');
+                flash(translate('Thank you for registration, Our representative will contact you shortly to approve your webiste access'))->success();
+                return redirect()->route('user.login');
             }
             else{
                 $seller->delete();
