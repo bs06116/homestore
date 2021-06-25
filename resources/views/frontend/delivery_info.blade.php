@@ -166,17 +166,23 @@
                 <form class="form-default"  action="{{ route('checkout.store_delivery_info') }}" role="form" method="POST">
                     @csrf
                     @if (!empty($seller_products))
-                        @foreach ($seller_products as $key => $seller_product)
+                   {{-- // {{dd($seller_products)}} --}}
+                         {{-- @foreach ($seller_products as $key => $seller_product) --}}
                             <div class="card mb-3 shadow-sm border-0 rounded">
-                                <div class="card-header p-3">
+                                {{-- <div class="card-header p-3">
                                     <h5 class="fs-16 fw-600 mb-0">{{ \App\Shop::where('user_id', $key)->first()->name }} {{ translate('Products') }}</h5>
-                                </div>
+                                </div> --}}
                                 <div class="card-body">
                                     <ul class="list-group list-group-flush">
-                                        @foreach ($seller_product as $cartItem)
+                                        @foreach ($carts as $key => $cartItem)
+                                            {{-- {{dd($cartItem['product_id'])}} --}}
+                                            {{-- {{dd($cartItem['product_id'])}} --}}
+
                                         @php
-                                            $product = \App\Product::find($cartItem);
+                                            $product = \App\Product::find($cartItem['product_id']);;
+
                                         @endphp
+
                                         <li class="list-group-item">
                                             <div class="d-flex">
                                                 <span class="mr-2">
@@ -186,6 +192,7 @@
                                                         alt="{{  $product->getTranslation('name')  }}"
                                                     >
                                                 </span>
+
                                                 <span class="fs-14 opacity-60">{{ $product->getTranslation('name') }}</span>
                                             </div>
                                         </li>
@@ -196,6 +203,7 @@
                                         <div class="col-md-6">
                                             <h6 class="fs-15 fw-600">{{ translate('Choose Delivery Type') }}</h6>
                                         </div>
+
                                         <div class="col-md-6">
                                             <div class="row gutters-5">
                                                 <div class="col-6">
@@ -214,16 +222,19 @@
                                                         </span>
                                                     </label>
                                                 </div>
-                                                @if (\App\BusinessSetting::where('type', 'pickup_point')->first()->value == 1)
-                                                    @if (is_array(json_decode(\App\Shop::where('user_id', $key)->first()->pick_up_point_id)))
+
+                                                {{-- @if (\App\BusinessSetting::where('type', 'pickup_point')->first()->value == 1) --}}
+
+                                                    @if (is_array(json_decode(\App\Shop::where('user_id', 9)->first()->pick_up_point_id)))
+
                                                     <div class="col-6">
                                                         <label class="aiz-megabox d-block bg-white mb-0">
                                                             <input
                                                                 type="radio"
-                                                                name="shipping_type_{{ $key }}"
+                                                                name="shipping_type_9"
                                                                 value="pickup_point"
                                                                 onchange="show_pickup_point(this)"
-                                                                data-target=".pickup_point_id_{{ $key }}"
+                                                                data-target=".pickup_point_id_9"
                                                             >
                                                             <span class="d-flex p-3 aiz-megabox-elem">
                                                                 <span class="aiz-rounded-check flex-shrink-0 mt-1"></span>
@@ -231,10 +242,13 @@
                                                             </span>
                                                         </label>
                                                     </div>
+
                                                     @endif
-                                                @endif
+                                                {{-- @endif --}}
+
                                             </div>
-                                            @if (\App\BusinessSetting::where('type', 'pickup_point')->first()->value == 1)
+
+                                            {{-- @if (\App\BusinessSetting::where('type', 'pickup_point')->first()->value == 1)
                                                 @if (is_array(json_decode(\App\Shop::where('user_id', $key)->first()->pick_up_point_id)))
                                                 <div class="mt-4 pickup_point_id_{{ $key }} d-none">
                                                     <select
@@ -259,7 +273,7 @@
                                                     </select>
                                                 </div>
                                                 @endif
-                                            @endif
+                                            @endif --}}
                                         </div>
                                     </div>
 
@@ -268,7 +282,7 @@
                                     <button type="submit" name="owner_id" value="{{ $key }}" class="btn fw-600 btn-primary">{{ translate('Continue to Payment')}}</a>
                                 </div>
                             </div>
-                        @endforeach
+                        {{-- @endforeach --}}
                     @endif
                 </form>
                 <div class="pt-4">

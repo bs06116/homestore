@@ -256,7 +256,7 @@ class CheckoutController extends Controller
     public function store_delivery_info(Request $request)
     {
         $carts = Cart::where('user_id', Auth::user()->id)
-                ->where('owner_id', $request->owner_id)
+                // ->where('owner_id', $request->owner_id) /// Asim's Changes
                 ->get();
         $shipping_info = Address::where('id', $carts[0]['address_id'])->first();
         $total = 0;

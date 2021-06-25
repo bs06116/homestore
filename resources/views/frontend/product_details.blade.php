@@ -531,15 +531,7 @@
                             @endif
                             <div class="opacity-50 fs-12 border-bottom">{{ translate('Sold By') }}</div>
                             @if ($detailedProduct->added_by == 'seller' && get_setting('vendor_system_activation') == 1)
-                                <a href="{{ route('shop.visit', $detailedProduct->user->shop->slug) }}"
-                                    class="text-reset d-block fw-600">
-                                    {{ $detailedProduct->user->shop->name }}
-                                    @if ($detailedProduct->user->seller->verification_status == 1)
-                                        <span class="ml-2"><i class="fa fa-check-circle" style="color:green"></i></span>
-                                    @else
-                                        <span class="ml-2"><i class="fa fa-times-circle" style="color:red"></i></span>
-                                    @endif
-                                </a>
+
                                 <div class="location opacity-70">{{ $detailedProduct->user->shop->address }}</div>
                             @else
                                 <div class="fw-600">{{ env('APP_NAME') }}</div>
