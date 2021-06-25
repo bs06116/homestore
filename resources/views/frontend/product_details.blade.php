@@ -103,7 +103,7 @@
                     </div>
 
                     <div class="col-xl-7 col-lg-6">
-                        <div class="text-left">
+                        <div class="text-left pt-3">
                         <!-- price -->
                         <div>
                             @if (Auth::check())
@@ -408,12 +408,12 @@
 
                             <div class="mt-3">
                                 @if ($qty > 0)
-                                    <button type="button" class="btn btn-soft-primary mr-2 add-to-cart fw-600" onclick="addToCart()">
-                                        <i class="las la-shopping-bag"></i>
-                                        <span class="d-none d-md-inline-block"> {{ translate('Add to cart')}}</span>
+                                    <button type="button" class="addcart-btn btn btn-soft-primary mr-2 add-to-cart fw-600" onclick="addToCart()">
+                                         <i class="la la-shopping-cart"></i>
+                                        <span class=" d-md-inline-block"> {{ translate('Add to cart')}}</span>
                                     </button>
-                                    <button type="button" class="btn btn-primary buy-now fw-600" onclick="buyNow()">
-                                        <i class="la la-shopping-cart"></i> {{ translate('Buy Now')}}
+                                    <button type="button" class="bag-btn btn btn-primary buy-now fw-600" onclick="buyNow()">
+                                        <i class="las la-shopping-bag"></i> {{ translate('Buy Now')}}
                                     </button>
                                 @else
                                     <button type="button" class="btn btn-secondary fw-600" disabled>
@@ -474,14 +474,14 @@
                                     </div>
                                 </div>
                             @endif
-                            <div class="row no-gutters mt-4">
+                            <!-- <div class="row no-gutters mt-4">
                                 <div class="col-sm-2">
                                     <div class="opacity-50 my-2">{{ translate('Share')}}:</div>
                                 </div>
                                 <div class="col-sm-10">
                                     <div class="aiz-share"></div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

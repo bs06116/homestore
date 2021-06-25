@@ -113,7 +113,7 @@ pre {
 }
 
 .no-scrollbar::-webkit-scrollbar {
-    width: 0;
+    width: 0;                                                                                                                              
 }
 .no-scrollbar::-webkit-scrollbar-track {
     background: transparent;
@@ -8424,19 +8424,24 @@ div.footable-loader > span.fooicon:after {
     left: 10px;
 }
 .aiz-carousel .slick-disabled {
-    display: none !important;
+    /* display: none !important; */
 }
 
 .aiz-carousel .slick-next {
     right: 10px;
 }
 .aiz-carousel .slick-dots {
-    list-style: none;
+    /* list-style: none; */
     display: flex;
+    color:#808080;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 0;
-    padding-left: 0;
+    /* padding-left: 0; */
+    font-size: 25px;
+}
+.slick-dots li{
+    padding-left: 15px;
 }
 .aiz-carousel .slick-dots button {
     height: 11px;

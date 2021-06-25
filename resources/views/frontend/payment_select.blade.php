@@ -406,13 +406,13 @@
             <!-- checkbox end here -->
         </div>
         <div class="row mt-3-sm">
-                        <div class="col-5 pt-2">
+                        <div class="col-6 pt-2">
                             <a href="{{ route('home') }}" class="link link--style-3">
                                 <i class="las la-arrow-left"></i>
                                 {{ translate('Return to shop')}}
                             </a>
                         </div>
-                        <div class="col-7 compelteorederbtn">
+                        <div class="col-6">
                             <button type="button" onclick="submitOrder(this)" class="btn btn-primary fw-600">{{ translate('Complete Order')}}</button>
                         </div>
                     </div>
