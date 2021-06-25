@@ -8440,8 +8440,8 @@ div.footable-loader > span.fooicon:after {
     /* padding-left: 0; */
     font-size: 25px;
 }
-.slick-dots li:active{
-    color: blue;
+.slick-dots li.slick-active {
+    color: #007bff !important;
 }
 .slick-dots li{
     padding-left: 15px;
