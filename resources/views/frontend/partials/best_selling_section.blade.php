@@ -8,7 +8,7 @@
                     </h3>
                     {{-- <a href="javascript:void(0)" class="ml-auto mr-0 btn btn-primary btn-sm shadow-md">{{ translate('Top 20') }}</a> --}}
                 </div>
-                <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="7" data-xl-items="6" data-lg-items="5"  data-md-items="4" data-sm-items="3" data-xs-items="3" data-arrows='false' data-dots="true " data-infinite='false'>
+                <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="7" data-xl-items="6" data-lg-items="5"  data-md-items="4" data-sm-items="3" data-xs-items="3" data-arrows='false' data-dots='true' data-infinite='false'>
                     @foreach (filter_products(\App\Product::where('published', 1)->orderBy('num_of_sale', 'desc'))->limit(12)->get() as $key => $product)
                         <div class="carousel-box">
                             <div class="aiz-card-box border border-light rounded hov-shadow-md my-1 has-transition bg-change ">
@@ -39,7 +39,7 @@
                                     <div class="fs-15">
                                         @if (Auth::check())
                                         @if(home_base_price($product->id) != home_discounted_base_price($product->id))
-                                            <!-- <del class="fw-600 opacity-50 mr-1">{{ home_base_price($product->id) }}</del> -->
+                                            
                                         @endif
                                         <span class="fw-700 text-primary">{{ home_discounted_base_price($product->id) }}</span>
                                         @else
@@ -47,9 +47,7 @@
                                         @endif
 
                                     </div>
-                                    <!-- <div class="rating rating-sm mt-1">
-                                        {{ renderStarRating($product->rating) }}
-                                    </div> -->
+                                    
                                     <h3 class="fw-600 fs-12 text-truncate-2 lh-1-4 mb-0 h-25px">
                                         <a href="{{ route('product', $product->slug) }}" class="d-sm-inline text-reset text-truncate">{{  $product->getTranslation('name')  }}</a>
                                     </h3>

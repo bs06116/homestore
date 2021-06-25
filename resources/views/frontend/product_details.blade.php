@@ -104,10 +104,29 @@
 
                     <div class="col-xl-7 col-lg-6">
                         <div class="text-left pt-3">
+<<<<<<< HEAD
+                        <!-- price -->
+                        <div>
+                            @if (Auth::check())
+                        @if(home_price($detailedProduct->id) != home_discounted_price($detailedProduct->id))
+
+                        <div class="row no-gutters mt-3">
+                            <div class="col-sm-2 mt-1">
+                                <div class="opacity-50 ">{{ translate('Price')}}:</div>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="fs-20 opacity-60">
+                                    <del>
+                                        {{ home_price($detailedProduct->id) }}
+                                        @if($detailedProduct->unit != null)
+                                            <span>/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                        @endif
+=======
                             <!-- price -->
                             <div>
                                 @if (Auth::check())
                                     @if (home_price($detailedProduct->id) != home_discounted_price($detailedProduct->id))
+>>>>>>> 4fb628e8ea0ca425de5479bb0abd3e444aca792a
 
                                         <div class="row no-gutters mt-3">
                                             <div class="col-sm-2 mt-1">
@@ -421,6 +440,14 @@
 
                             <div class="mt-3">
                                 @if ($qty > 0)
+<<<<<<< HEAD
+                                    <button type="button" class="addcart-btn btn btn-soft-primary mr-2 add-to-cart fw-600" onclick="addToCart()">
+                                         <i class="la la-shopping-cart"></i>
+                                        <span class=" d-md-inline-block"> {{ translate('Add to cart')}}</span>
+                                    </button>
+                                    <button type="button" class="bag-btn btn btn-primary buy-now fw-600" onclick="buyNow()">
+                                        <i class="las la-shopping-bag"></i> {{ translate('Buy Now')}}
+=======
                                     <button type="button" class="btn btn-soft-primary mr-2 add-to-cart fw-600"
                                         onclick="addToCart()">
                                         <i class="las la-shopping-bag"></i>
@@ -428,6 +455,7 @@
                                     </button>
                                     <button type="button" class="btn btn-primary buy-now fw-600" onclick="buyNow()">
                                         <i class="la la-shopping-cart"></i> {{ translate('Buy Now') }}
+>>>>>>> 4fb628e8ea0ca425de5479bb0abd3e444aca792a
                                     </button>
                                 @else
                                     <button type="button" class="btn btn-secondary fw-600" disabled>
@@ -494,14 +522,14 @@
                                     </div>
                                 </div>
                             @endif
-                            <div class="row no-gutters mt-4">
+                            <!-- <div class="row no-gutters mt-4">
                                 <div class="col-sm-2">
                                     <div class="opacity-50 my-2">{{ translate('Share') }}:</div>
                                 </div>
                                 <div class="col-sm-10">
                                     <div class="aiz-share"></div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

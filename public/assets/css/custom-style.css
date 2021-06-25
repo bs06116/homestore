@@ -104,11 +104,11 @@
    .aiz-card-box{
        border-radius: 10px !important;
    }
-   .compelteorederbtn{
-       padding-left: 85px !important;
-   }
    .mobile-thumnail{
        display: none !important;
+   }
+   .addcart-btn , .bag-btn{
+       font-size: large !important;
    }
 }
 

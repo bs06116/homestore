@@ -438,7 +438,7 @@
                             <div class="position-relative text-center">
                                 <a href="{{ route('product', $product->slug) }}" class="d-block">
                                     <img
-                                        class="img-fit lazyload mx-auto h-167px h-md-150px fit-products-img"
+                                        class="img-fit lazyload mx-auto h-170px h-md-150px fit-products-img"
 
                                         src="{{ static_asset('assets/img/placeholder.jpg') }}"
                                         data-src="{{ uploaded_asset($product->thumbnail_img) }}"
