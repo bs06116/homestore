@@ -8433,12 +8433,15 @@ div.footable-loader > span.fooicon:after {
 .aiz-carousel .slick-dots {
     /* list-style: none; */
     display: flex;
-    color:#808080;
+    color:#DCDCDC ;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 0;
     /* padding-left: 0; */
     font-size: 25px;
+}
+.slick-dots li:active{
+    color: blue;
 }
 .slick-dots li{
     padding-left: 15px;
