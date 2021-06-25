@@ -225,7 +225,7 @@
 
                                                 {{-- @if (\App\BusinessSetting::where('type', 'pickup_point')->first()->value == 1) --}}
 
-                                                    @if (is_array(json_decode(\App\Shop::where('user_id', 9)->first()->pick_up_point_id)))
+                                                    @if (is_array(json_decode(\App\Shop::where('user_id', 3)->first()->pick_up_point_id)))
 
                                                     <div class="col-6">
                                                         <label class="aiz-megabox d-block bg-white mb-0">
