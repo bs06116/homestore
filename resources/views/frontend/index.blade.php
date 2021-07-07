@@ -432,7 +432,7 @@
                 </div>
                 <div class="row gutters-5 row-cols-xxl-6 row-cols-lg-5 row-cols-md-4 row-cols-2" id="load-data">
 
-                    @foreach (filter_products(\App\Product::where('published', 1))->orderBy('created_at','DESC')->limit(6)->get() as $key => $product)
+                    @foreach (filter_products(\App\Product::where('published', 1))->orderBy('created_at','DESC')->limit(30)->get() as $key => $product)
                     <div class="col mb-2 px-0">
                         <div class="aiz-card-box1 aiz-card-box h-100 border border-light rounded shadow-sm hov-shadow-md has-transition bg-white">
                             <div class="position-relative text-center">
@@ -469,7 +469,7 @@
                                     <span>Please <strong><a class="registrationLink" style="color: #000000" href="{{ route('user.login') }}" >login</a></strong> to see prices</span>
                                     @endif
                                 </div>
-                               
+
                                 <!-- <div class="rating rating-sm mt-1">
                                     {{ renderStarRating($product->rating) }}
                                 </div> -->
